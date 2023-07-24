@@ -1,0 +1,31 @@
+{
+  "name": "uap_sigthings",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "autoprefixer": "10.4.14",
+    "chart.js": "^4.3.0",
+    "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security",
+    "install": "^0.13.0",
+    "mysql2": "^3.5.2",
+    "net": "^1.0.2",
+    "next": "13.4.12",
+    "npm": "^9.8.1",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "serverless-mysql": "^1.5.5",
+    "tailwindcss": "3.3.3",
+    "tidb": "^0.1.0",
+    "tls": "^0.0.1"
+  }
+}
