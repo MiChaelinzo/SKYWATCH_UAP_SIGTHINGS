@@ -23,7 +23,8 @@ export default function handler(req, res) {
       return;
     }
 
-    connection.query('SELECT * FROM UAP_Sightings.UAP_Sightings LIMIT 50;', function(err, rows) {
+    // connection.query('SELECT * FROM UAP_Sightings.UAP_Sightings LIMIT 50;', function(err, rows) {
+      connection.query('select * from UAP_Sightings.UAP_Sightings where city="Doha" OR city="Dallas" OR city="Lachute (Canada)" LIMIT 50;', function(err, rows) {
       if (err) {
         console.error(err);
         res.status(500).json({ error: 'Failed to fetch data from the database.' });
