@@ -9,7 +9,7 @@ export default function page() {
       <div className='md:grid md:grid-cols-2 items-center pt-10'>
         <div className=''>
           <h1 className='text-3xl md:text-6xl font-tektur'>Who we are</h1>
-          <p className='text-xl md:text-2xl py-4 tracking-wider'>lorem.....</p>
+          <p className='text-xl text-justify py-4 tracking-wider'>A website and database that stores information about UFO/UAP sightings. The database is built using TiDB, which is an advanced, open-source, distributed SQL database with MySQL compatibility.</p>
 
           <Link href="/AllSighting">
             <button className='bg-secondary py-2 px-8 rounded-md text-xl md:text-2xl'>All Sighting</button>
@@ -30,10 +30,10 @@ export default function page() {
           <p className='text-xl md:text-2xl py-4 tracking-wider'> UAP Sightings is a web app where you can:
           </p>
           <ul className="text-xl">
-            <li className="list-disc">About app</li>
-            <li className="list-disc">About app</li>
-            <li className="list-disc">About app</li>
-            <li className="list-disc">About app</li>
+            <li className="list-disc">TiDB's distributed architecture enables seamless scalability and high availability, accommodating the website's growing data needs.</li>
+            <li className="list-disc">The website and database utilize TiDB, an advanced, open-source, distributed SQL database, for storing UFO/UAP sighting information.</li>
+            <li className="list-disc">With full MySQL compatibility, TiDB simplifies development and allows easy migration from traditional MySQL databases, ensuring a smooth integration process.</li>
+            <li className="list-disc">TiDB's powerful query capabilities facilitate efficient data retrieval and analysis, enhancing user experience and supporting further investigations into sightings.</li>
           </ul>
         </div>
       </div>
