@@ -14,7 +14,7 @@ export default function Navbar() {
                 <Link href="/"><span className="p-2 font-handjet mr-4 inline-flex items-center text-8xl cursor-pointer font-base">UAP Sightings
                 </span></Link>
 
-                <div className="top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" >
+                <div className="top-navbar w-full lg:inline-flex font-orbitron lg:flex-grow lg:w-auto" >
                     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full text-xl lg:items-center items-start flex flex-col lg:h-auto space-x-2 mr-12" >
 
                         <Link href="/">
@@ -27,6 +27,10 @@ export default function Navbar() {
 
                         <Link href="/AllSighting">
                             <span className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center dark:hover:bg-navHover hover:bg-secondary cursor-pointer hover:text-white">All Sighting</span>
+                        </Link>
+
+                        <Link href="/AIBackground">
+                            <span className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center dark:hover:bg-navHover hover:bg-secondary cursor-pointer hover:text-white">AI Background</span>
                         </Link>
 
                     </div>

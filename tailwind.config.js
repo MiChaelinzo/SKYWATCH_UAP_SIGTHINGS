@@ -23,6 +23,7 @@ module.exports = {
     fontFamily: {
       'handjet': ['Handjet', 'cursive'],
       'tektur': ['Tektur', 'cursive'],
+      'orbitron': ['Orbitron', 'sans-serif'],
     }
   },
   variants: {

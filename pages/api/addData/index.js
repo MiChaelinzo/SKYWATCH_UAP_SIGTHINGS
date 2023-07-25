@@ -1,4 +1,3 @@
-// pages/api/addData.js
 import mysql from 'mysql2';
 
 export default function handler(req, res) {
