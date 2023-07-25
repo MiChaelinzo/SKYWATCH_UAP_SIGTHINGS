@@ -17,13 +17,13 @@ export default function page() {
 
         </div>
         <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black">
-          <Image src='/hero.svg' alt="img" width="300" height="300" />
+          <Image src='/hero.jpg' alt="img" width="500" height="300" />
         </div>
       </div>
 
       <div className='md:grid md:grid-cols-2 pt-12 items-center'>
         <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black">
-          <Image src='/feat.svg' alt="img" width="300" height="300" />
+          <Image src='/feat.jpg' alt="img" width="500" height="300" />
         </div>
         <div className=''>
           <h1 className='text-3xl md:text-5xl font-tektur'>What else do we have</h1>
