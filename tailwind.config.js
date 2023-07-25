@@ -21,7 +21,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      'montserrat': ['Montserrat']
+      'handjet': ['Handjet', 'cursive'],
+      'tektur': ['Tektur', 'cursive'],
     }
   },
   variants: {
