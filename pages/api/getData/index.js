@@ -2,11 +2,11 @@ import mysql from 'mysql2';
 
 export default function handler(req, res) {
   const connection = mysql.createConnection({
-    host: "gateway01.eu-central-1.prod.aws.tidbcloud.com",
+    host: process.env.DB_HOST,
     port: 4000,
-    user: "4RsHdTyqwtRrmGP.root",
-    password: "QyFth1WGm9BA2Yva",
-    database: 'UAP_Sightings',
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     ssl: {
       minVersion: 'TLSv1.2',
       rejectUnauthorized: true

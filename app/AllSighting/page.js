@@ -2,15 +2,20 @@
 
 import React, { useEffect, useState } from 'react';
 
-export default function page() {
+export default function Page() {
   const [data, setData] = useState([]);
+  const [loadedRows, setLoadedRows] = useState(50);
 
   useEffect(() => {
-    fetch('/api/getData')
+    fetch(`/api/getData?limit=${loadedRows}`)
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error('Error fetching data:', error));
-  }, []);
+  }, [loadedRows]);
+
+  const handleLoadMore = () => {
+    setLoadedRows((prevLoadedRows) => prevLoadedRows + 50);
+  };
 
   return (
     <div className="py-10">
@@ -20,7 +25,7 @@ export default function page() {
       </div>
 
       <div className="overflow-x-auto mx-4">
-        <table className='w-full bg-white shadow-md rounded-lg mt-4'>
+        <table className="w-full bg-white shadow-md rounded-lg mt-4">
           <thead>
             <tr className="bg-gray-100 border-b-2 border-gray-800">
               <th className="py-2 px-4 font-semibold text-sm">Event Date and Time</th>
@@ -46,6 +51,15 @@ export default function page() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="flex justify-center mt-4">
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600"
+          onClick={handleLoadMore}
+        >
+          Load More
+        </button>
       </div>
     </div>
   );
