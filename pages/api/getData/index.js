@@ -16,15 +16,15 @@ export default function handler(req, res) {
     }
   });
 
-  connection.connect(function(err) {
+  connection.connect(function (err) {
     if (err) {
       console.error(err);
       res.status(500).json({ error: 'Failed to connect to the database.' });
       return;
     }
 
-    // connection.query('SELECT * FROM UAP_Sightings.UAP_Sightings LIMIT 50;', function(err, rows) {
-      connection.query('select * from UAP_Sightings.UAP_Sightings where city="Doha" OR city="Dallas" OR city="Lachute (Canada)" LIMIT 50;', function(err, rows) {
+    // connection.query('SELECT * FROM UAP_Sightings.UAP_Sightings LIMIT 600;', function(err, rows) {
+    connection.query(`SELECT * FROM UAP_Sightings.UAP_Sightings WHERE city IN ("Doha", "Dallas", "Lachute (Canada)") ORDER BY CASE WHEN city LIKE 'Doha%' THEN 1 ELSE 2 END LIMIT 600;`, function (err, rows) {
       if (err) {
         console.error(err);
         res.status(500).json({ error: 'Failed to fetch data from the database.' });
