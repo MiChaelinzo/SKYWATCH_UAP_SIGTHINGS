@@ -30,7 +30,7 @@ const handler = async (req, res) => {
              //num_inference_steps: 12,
              num_outputs: 1,
              guideance_scale: 4.5,
-             scheduler: "PNDM" ,
+             scheduler: "K_EULER" ,
         },
       },
     );
