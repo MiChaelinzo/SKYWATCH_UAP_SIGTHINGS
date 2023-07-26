@@ -32,7 +32,8 @@ Mutual UFO Network, (NICAP) National Investigations Committee on Aerial Phenomen
           </p>
           <ul className="text-xl">
             <li className="list-disc">TiDB's distributed architecture enables seamless scalability and high availability, accommodating the website's growing data needs.</li>
-            <li className="list-disc">Image generation and downloads that utilizes latest SDXL 0.9, short for Stable Diffusion XL.</li>
+            <li className="list-disc">Unlimited image generation and downloads that utilizes latest SDXL 0.9, short for Stable Diffusion XL.</li>
+            <li className="list-disc">The website and database utilize TiDB, an advanced, open-source, distributed SQL database, for storing UFO/UAP sighting information.</li>
             <li className="list-disc">With full MySQL compatibility, TiDB simplifies development and allows easy migration from traditional MySQL databases, ensuring a smooth integration process.</li>
             <li className="list-disc">TiDB's powerful query capabilities facilitate efficient data retrieval and analysis, enhancing user experience and supporting further investigations into sightings.</li>
           </ul>
