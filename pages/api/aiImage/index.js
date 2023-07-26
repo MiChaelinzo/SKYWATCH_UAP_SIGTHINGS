@@ -18,7 +18,7 @@ const handler = async (req, res) => {
       "stability-ai/stable-diffusion:db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf",
       {
         input: {
-          prompt: Realistic UFO,
+          prompt: "Realistic UFO",
           image_dimensions: "512x512",
           num_inference_steps: 12,
           num_outputs: 1,
