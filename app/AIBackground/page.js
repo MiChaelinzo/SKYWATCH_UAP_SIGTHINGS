@@ -49,8 +49,8 @@ function AIArt() {
       <div className="py-10">
       <div className="grid place-items-center">
         <h1 className="text-5xl text-center text-white font-tektur">AI Background</h1>
-        <h4 className="text-5xl text-center text-white font-tektur">How to use: add (shape), add (comma) and add (description summary)</h4>
-        <h4 className="text-5xl text-center text-white font-tektur">For example: The object was circular and metallic, with a diameter of about 10 meters. It had no visible windows, wings, or propellers.</h4>
+        <h4 className="text-1xl text-center text-white font-tektur">How to use: add (shape), add (comma) and add (description summary)</h4>
+        <h4 className="text-1xl text-center text-white font-tektur">For example: The object was circular and metallic, with a diameter of about 10 meters. It had no visible windows, wings, or propellers.</h4>
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
       </div>
 
