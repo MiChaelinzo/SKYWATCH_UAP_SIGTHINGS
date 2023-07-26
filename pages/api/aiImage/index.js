@@ -20,9 +20,9 @@ const handler = async (req, res) => {
         input: {
           prompt: "Realistic UFO or UAP",
           image_dimensions: "1024x1024",
-          num_inference_steps: 50,
+          num_inference_steps: 25,
           num_outputs: 1,
-          guideance_scale: 8,
+          guideance_scale: 4,
           scheduler: "PNDM" ,
         },
       },
