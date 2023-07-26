@@ -71,7 +71,7 @@ function AIArt() {
           </button>
         </form>
       </div>
-      {loading && <div className="text-center py-12 text-gray-800">Loading...</div>}
+      {loading && <div className="text-center py-12 text-gray-100">Loading...</div>}
 
       {imageUrl && !loading && (
         <div className="my-12 grid place-items-center">

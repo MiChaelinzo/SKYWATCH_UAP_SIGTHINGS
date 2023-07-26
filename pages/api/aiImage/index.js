@@ -15,7 +15,7 @@ const handler = async (req, res) => {
 
    
     const output = await replicate.run(
-      "stability-ai/stable-diffusion:db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf",
+      "stability-ai/stable-diffusion:ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4",
       {
         input: {
           prompt: "Realistic UFO or UAP",
@@ -23,7 +23,7 @@ const handler = async (req, res) => {
           num_inference_steps: 50,
           num_outputs: 4,
           guideance_scale: 6,
-          scheduler: "PNDM" ,
+          scheduler: "PNDM" , 
         },
       },
     );

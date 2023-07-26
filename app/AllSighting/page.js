@@ -28,6 +28,8 @@ export default function Page() {
         <table className="w-full bg-white shadow-md rounded-lg mt-4">
           <thead>
             <tr className="bg-gray-100 border-b-2 border-gray-800">
+
+              <th className="py-2 px-4 font-semibold text-sm">Month and Year</th>
               <th className="py-2 px-4 font-semibold text-sm">Event Date and Time</th>
               <th className="py-2 px-4 font-semibold text-sm">City</th>
               <th className="py-2 px-4 font-semibold text-sm">State Provinces</th>
@@ -40,6 +42,7 @@ export default function Page() {
           <tbody>
             {data.map((row, index) => (
               <tr key={index} className={`border-b-2 border-gray-800 ${index % 2 === 0 ? 'bg-gray-500' : ''}`}>
+                <td className="py-2 px-4 text-sm">{row.month_year_of_event}</td>
                 <td className="py-2 px-4 text-sm">{row.event_date_time}</td>
                 <td className="py-2 px-4 text-sm">{row.city}</td>
                 <td className="py-2 px-4 text-sm">{row.state_provinces}</td>
