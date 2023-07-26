@@ -10,7 +10,7 @@ export default function page() {
         <div className=''>
           <h1 className='text-3xl md:text-6xl font-tektur'>Who we are</h1>
           <p className='text-xl text-justify py-4 tracking-wider'>A website and database that currently stores over 2 million events & information about UFO/UAP sightings going back to year 0100, 1st century with the legitimate sources from (NUFORC) National UFO Reporting Center, (MUFON)
-Mutual UFO Network, (NICAP) National Investigations Committee on Aerial Phenomena, nationalarchives.gov, US National Intelligence office, etc. The database is built using TiDB, which is an advanced, open-source, distributed SQL database with MySQL compatibility.</p>
+Mutual UFO Network, (NICAP) National Investigations Committee on Aerial Phenomena, nationalarchives.gov, US National Intelligence office, etc. The database is built using TiDB cloud serverless, which is an advanced, open-source, distributed SQL database with MySQL compatibility.</p>
 
           <Link href="/AllSighting">
             <button className='bg-secondary py-2 px-8 rounded-md text-xl md:text-2xl'>All Sighting</button>
@@ -28,10 +28,10 @@ Mutual UFO Network, (NICAP) National Investigations Committee on Aerial Phenomen
         </div>
         <div className=''>
           <h1 className='text-3xl md:text-5xl font-tektur'>What else do we have</h1>
-          <p className='text-xl md:text-2xl py-4 tracking-wider'> UAP Sightings is a web app where you can:
+          <p className='text-xl md:text-2xl py-4 tracking-wider'> UAP Sightings is a web-application where you can:
           </p>
           <ul className="text-xl">
-            <li className="list-disc">The website and database utilize TiDB cloud serverless, an advanced, open-source, distributed SQL database, for storing UFO/UAP sighting information.</li>
+            <li className="list-disc">TiDB Cloud is a fully-managed Database-as-a-Service (DBaaS) that brings TiDB, an open-source Hybrid Transactional and Analytical Processing (HTAP) database, to your cloud.</li>
             <li className="list-disc">Unlimited image generation and downloads that utilizes the latest SDXL 0.9, short for Stable Diffusion XL.</li>
             <li className="list-disc">With full MySQL compatibility, TiDB simplifies development and allows easy migration from traditional MySQL databases, ensuring a smooth integration process.</li>
             <li className="list-disc">TiDB's powerful query capabilities facilitate efficient data retrieval and analysis, enhancing user experience and supporting further investigations into sightings.</li>
