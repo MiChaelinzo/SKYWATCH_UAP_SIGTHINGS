@@ -18,12 +18,12 @@ const handler = async (req, res) => {
       "stability-ai/stable-diffusion:db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf",
       {
         input: {
-          prompt: "Realistic UFO",
-          image_dimensions: "512x512",
-          num_inference_steps: 12,
+          prompt: "Realistic UFO or UAP",
+          image_dimensions: "1024x1024",
+          num_inference_steps: 50,
           num_outputs: 1,
-          guideance_scale: 3.5,
-          scheduler: "K_EULER" ,
+          guideance_scale: 8,
+          scheduler: "PNDM" ,
         },
       },
     );
