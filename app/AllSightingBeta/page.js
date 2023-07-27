@@ -23,11 +23,12 @@ export default function Page() {
         <div className="text-5xl text-center text-white font-tektur relative">All Sightings
         <h1 className="text-xl text-center text-secondary font-tektur absolute -top-2 -right-12">Beta</h1>
     
-        <h2 className="text-xl text-center text-white font-tektur relative">Use your keyboard to scroll to right for more information!</h2>
 
         </div>
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
       </div>
+    
+        <h2 className="text-xl text-center text-white font-tektur relative">Use your keyboard to scroll to right for more information!</h2>
 
       <div className="overflow-x-auto mx-4">
         <table className="w-full bg-white shadow-md rounded-lg mt-4">
