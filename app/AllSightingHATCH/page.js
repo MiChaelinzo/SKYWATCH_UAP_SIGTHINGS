@@ -25,7 +25,7 @@ export default function Page() {
         </div>
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
     
-        <h4 className="text-xl text-center text-white font-tektur relative">Larry Hatch was a UFO researcher who created one of the most comprehensive databases of UFO sightings. He spent 20 years compiling this database and writing the associated mapping and analysis program. Over the years, there have been posts on various forums asking about it. Hatch’s life’s work was nearly lost after his death in 2018. However, dedicated researchers have obtained copies of the original DOS program, loaded it into emulator DOSBox, and programatically retrieved 18,123 of the 18,552 entries</h4>
+        <h4 className="text-xl text-center text-white font-tektur relative">Larry Hatch was a UFO researcher who created one of the most comprehensive databases of UFO sightings. He spent 20 years compiling this database and writing the associated mapping and analysis program. Learn more about him here: https://tinyurl.com/2p95d7ts </h4>
 
         <h2 className="text-xl text-center text-white font-tektur relative">Click the page and use your keyboard to scroll to right for more information!</h2>
 
