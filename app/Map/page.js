@@ -4,7 +4,7 @@ export default function page() {
     return (
         <div className="py-10">
             <div className="grid place-items-center pb-4">
-                <h1 className="text-5xl text-center text-white font-tektur">UFO Sighting on Map</h1>
+                <h1 className="text-5xl text-center text-white font-tektur">UFO Sighting on 3D Globe</h1>
                 <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
             </div>
 
