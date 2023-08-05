@@ -9,7 +9,7 @@ export default function page() {
       <div className='md:grid md:grid-cols-2 items-center pt-10'>
         <div className=''>
           <h1 className='text-3xl md:text-6xl font-tektur'>Who we are</h1>
-          <p className='text-xl text-justify py-4 tracking-wider'>A website and database that currently stores over 2 million events & information about UFO/UAP sightings going back to year 0100, 1st century with the legitimate sources from (NUFORC) National UFO Reporting Center, (MUFON)
+          <p className='text-xl text-justify py-4 tracking-wider'>A website and database that currently stores over 2 million lines of CSV (Comma Separated Values) file about UFO/UAP sightings going back to year 0100, 1st century with the legitimate sources from (NUFORC) National UFO Reporting Center, (MUFON)
 Mutual UFO Network, (NICAP) National Investigations Committee on Aerial Phenomena, nationalarchives.gov, US National Intelligence office, etc. The database is built using TiDB cloud serverless, which is an advanced, open-source, distributed SQL database with MySQL compatibility.</p>
 
           <Link href="/AllSighting">
