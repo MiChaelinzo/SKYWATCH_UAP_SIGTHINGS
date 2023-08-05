@@ -22,7 +22,7 @@ const NewsPage = () => {
   return (
     <div className="py-10">
       <div className="grid place-items-center">
-        <h1 className="text-5xl text-center text-white font-tektur">Latest UFO News</h1>
+        <h1 className="text-5xl text-center text-white font-tektur">Latest UAP/UFO News</h1>
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
       </div>
 
