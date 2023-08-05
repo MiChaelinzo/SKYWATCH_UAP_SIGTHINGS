@@ -19,6 +19,9 @@ module.exports = {
         '128': '40rem',
         '256': '80rem',
       },
+      backgroundImage: {
+        'heroBg': "url('/public/bg1.jpg')",
+      }
     },
     fontFamily: {
       'handjet': ['Handjet', 'cursive'],

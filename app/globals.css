@@ -9,3 +9,12 @@
 body {
   background-color: #1B2431;
 }
+
+.navbg{
+  background-image: url(/public/bg1.jpg);
+  background-size: cover;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  /* background-color: red; */
+}
