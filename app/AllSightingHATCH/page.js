@@ -24,6 +24,8 @@ export default function Page() {
         <h1 className="text-xl text-center text-secondary font-tektur absolute -top-4 -right-12">HATCH</h1>
         </div>
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
+    
+        <h4 className="text-xl text-center text-white font-tektur relative">Larry Hatch was a UFO researcher who created one of the most comprehensive databases of UFO sightings. He spent 20 years compiling this database and writing the associated mapping and analysis program. Learn more about him here: https://tinyurl.com/2p95d7ts </h4>
 
         <h2 className="text-xl text-center text-white font-tektur relative">Click the page and use your keyboard to scroll to right for more information!</h2>
 
