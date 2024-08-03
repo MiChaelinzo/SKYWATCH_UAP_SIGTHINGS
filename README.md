@@ -1,18 +1,43 @@
-# UAP_SIGTHINGS
+## Neon Nights - Cyberpunk Side-Scroller 🌆
 
-Since the recent trends and uproar surrounding unidentified aerial phenomena (UAPs), which have attracted a lot of attention from social media, news, and 1st-3rd world countries especially in the United States of America government and congress, and all over the world. The USA even made a UAP disclosure amendment in the United States of America democratic senate https://tinyurl.com/252yh44m and the Congress holds hearing about claims US government has UFO evidence. https://tinyurl.com/txhjhdtu
+### Inspiration 🌠
 
-There are many companies that are interested in UFO/UAP research. Some of these companies include NASA, which recently announced that it will form a team dedicated to studying UFOs/UAPs, and the Center for the Study of Extraterrestrial Intelligence (CSETI), which is a non-profit organization that is dedicated to the scientific study of extraterrestrial intelligence.
+We've always been captivated by the cyberpunk genre - the gritty atmosphere, the societal tensions, and the potential for incredible stories. When we saw the stunning 2D Neon Environments asset, we knew we had to build a world around it. We were also inspired by classic side-scrolling action games, and we wanted to bring that fast-paced gameplay into a cyberpunk setting. 
 
-There are also many private companies that are interested in UFO/UAP research, such as Bigelow Aerospace, which is a space technology company that has been involved in UFO/UAP research for many years.
+### What it does 🛰️
 
-The database was built using TiDB Serverless Tier, TIDB version v6.6.0, Cloud Provider AWS, Region Frankfurt(eu-central-1) , which is an advanced, open-source, distributed SQL database with MySQL, Rails, Python, JBDC, Go, and Node.js, etc. compatibility. We use this TIDB database to build a web application with Vercel that allows users to report sightings of UFO/UAPs and generate & view its image with SDXL 0.9, short for for Stable Diffusion XL. The application will also includes features in the future such as a map that shows the location of sightings and a search function that allows users to filter sightings based on various criteria.
+Neon Nights is a side-scrolling action game set in a sprawling cyberpunk metropolis.  Players take on the role of a skilled runner, navigating a world on the brink of chaos.  The game combines:
 
-- Resources and links below:
-  
-- https://nuforc.org/
-- https://mufon.com/
-- http://www.nicap.org/
-- https://www.dni.gov/
-- https://www.nationalarchives.gov.uk/ufos/
-- https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/ufos/
+* **Fluid Action Combat:**  Engage in fast-paced combat encounters using a variety of melee and ranged weapons, along with cybernetic augmentations. 
+* **Immersive Cyberpunk World:** Explore detailed 2D environments brought to life with vibrant pixel art, atmospheric lighting, and a captivating soundtrack.
+* **Branching Narrative:** Make choices that shape the story and influence the fate of the city's inhabitants.
+
+### How we built it 🏗️
+
+* **Unity Engine:** We used Unity as our game development engine, leveraging its 2D tools and workflows.
+* **Neon 2D Locations Asset:**  This asset pack provided the foundation for our game's visuals, giving us a head start on building our world. 
+* **C# Programming:**  We used C# for gameplay programming, character control, enemy AI, and interactive elements.
+* **Pixel Art and Animation:**  We created custom pixel art and animations to bring our characters and world to life.
+
+### Challenges we ran into 🚧
+
+* **Scope Management:** Cyberpunk worlds are rich in detail, and it was challenging to balance our ambitions with the time constraints of the hackathon. 
+* **Gameplay Balance:**  Balancing combat encounters, character progression, and enemy difficulty to create a rewarding player experience required careful iteration.
+
+### Accomplishments that we're proud of 🏆
+
+* **Stunning Visuals:**  We're incredibly proud of the visual atmosphere we achieved, combining the beautiful 2D assets with our custom artwork and lighting.
+* **Engaging Gameplay:** We've created a core gameplay loop that feels both familiar and fresh, blending action combat with exploration and narrative choices.
+
+### What we learned 🎓
+
+* **Rapid Prototyping:**  The hackathon environment forced us to prototype quickly and iterate on our ideas. 
+* **Asset Integration:**  We gained valuable experience in integrating and customizing pre-made assets to fit our vision.
+
+### What's next for Neon Nights - Cyberpunk Side-Scroller 🌆
+
+* **Expanded World and Story:** We have plans to add more levels, characters, and storylines to create a richer experience. 
+* **RPG Elements:**  We're considering implementing deeper character customization, skill trees, and equipment systems.
+* **Sound Design and Music:**  Original sound effects and a cyberpunk soundtrack will enhance the game's atmosphere. 
+
+
