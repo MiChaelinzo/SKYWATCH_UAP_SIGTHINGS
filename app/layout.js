@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 const inter = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'UAP Sightings',
+  title: 'SKYWATCH UAP Sightings',
   description: 'UFO 🛸🛸',
 }
 
