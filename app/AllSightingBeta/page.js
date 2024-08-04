@@ -30,7 +30,7 @@ export default function Page() {
     
         <h2 className="text-xl text-center text-white font-tektur relative"> CTRL+F for search. Type the city or year, etc. Click the page and use your mouse/keyboard to scroll to right for more information!</h2>
 
-      <div className="overflow-x-auto mx-4">
+      <div style={{ overflowX: 'auto', width: '100%' }}>
         <table className="w-full bg-white shadow-md rounded-lg mt-4">
           <thead>
             <tr className="bg-gray-100 border-b-2 border-gray-800">
