@@ -28,13 +28,13 @@ export default function page() {
         </div>
         <div className=''>
           <h1 className='text-3xl md:text-5xl font-tektur'>What else do we have</h1>
-          <p className='text-xl md:text-2xl py-4 tracking-wider'> UAP Sightings is a web-application where you can:
+          <p className='text-xl md:text-2xl py-4 tracking-wider'> SkyWatch UAP Sightings is a web-application where you can:
           </p>
           <ul className="text-xl">
-            <li className="list-disc">TiDB Cloud is a fully-managed Database-as-a-Service (DBaaS) that brings TiDB, an open-source Hybrid Transactional and Analytical Processing (HTAP) database, to your cloud.</li>
-            <li className="list-disc">Unlimited image generation and downloads that utilizes the latest SDXL 0.9, short for Stable Diffusion XL.</li>
-            <li className="list-disc">With full MySQL compatibility, TiDB simplifies development and allows easy migration from traditional MySQL databases, ensuring a smooth integration process.</li>
-            <li className="list-disc">TiDB's powerful query capabilities facilitate efficient data retrieval and analysis, enhancing user experience and supporting further investigations into sightings.</li>
+            <li className="list-disc">* **Effortless Cloud Database:**  TiDB Cloud takes care of everything, so you can focus on exploring UAP data, not managing servers. It's like having a team of database experts on call 24/7!</li>
+            <li className="list-disc">* **AI-Powered Visuals, Unlimited:** Imagine any UAP, generate its image with cutting-edge Stable Diffusion XL technology... and download as many as you like, all powered by TiDB's speed.</li>
+            <li className="list-disc">* **Easy Switch from MySQL:**  Already using MySQL?  Migrating to TiDB Cloud is a breeze, letting you unlock powerful new features without rewriting your whole application.</li>
+            <li className="list-disc">* **Find Answers Fast:**  TiDB Cloud's lightning-fast queries make exploring our massive UAP database incredibly responsive.  No more waiting around for results – dig into the data and uncover the truth!</li>
           </ul>
         </div>
       </div>
