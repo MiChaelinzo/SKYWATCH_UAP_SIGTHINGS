@@ -23,6 +23,7 @@ export default function Page() {
         <h1 className="text-5xl text-center text-white font-tektur">All Sightings</h1>
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
       </div>
+  <h2 className="text-xl text-center text-white font-tektur relative"> CTRL+F for search. Type the city or year, etc. </h2>
 
       <div className="overflow-x-auto mx-4">
         <table className="w-full bg-white shadow-md rounded-lg mt-4">
