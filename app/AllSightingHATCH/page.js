@@ -31,7 +31,7 @@ export default function Page() {
 
       </div>
 
-      <div className="overflow-x-auto mx-4">
+      <div style={{ overflowX: 'auto', width: '100%' }}>
         <table className="w-full bg-white shadow-md rounded-lg mt-4">
           <thead>
             <tr className="bg-gray-100 border-b-2 border-gray-800">
