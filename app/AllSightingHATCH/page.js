@@ -27,7 +27,7 @@ export default function Page() {
     
         <h4 className="text-xl text-center text-white font-tektur relative">Larry Hatch was a computer programmer by trade who created one of the most comprehensive databases of UAP/UFO sightings. Learn more about him here: Link https://tinyurl.com/2p95d7ts </h4>
 
-        <h2 className="text-xl text-center text-white font-tektur relative">Click the page and use your keyboard to scroll to right for more comprehensive information!</h2>
+        <h2 className="text-xl text-center text-white font-tektur relative">CTRL+F for search. Type the city or year, etc. Click the page and use your keyboard to scroll to right for more comprehensive information!</h2>
 
       </div>
 
