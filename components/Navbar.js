@@ -11,7 +11,7 @@ export default function Navbar() {
     return (
         <div >
             <nav className="flex items-center py-2 flex-wrap pl-4 text-fontColor tracking-wider text-white">
-                <Link href="/"><span className="p-2 font-handjet mr-4 inline-flex items-center text-5xl cursor-pointer font-base">UAP Sightings
+                <Link href="/"><span className="p-2 font-handjet mr-4 inline-flex items-center text-5xl cursor-pointer font-base">SkyWatch UAP Sightings
                 </span></Link>
 
                 <div className="top-navbar w-full lg:inline-flex font-orbitron lg:flex-grow lg:w-auto" >
