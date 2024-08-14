@@ -24,7 +24,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
-    "replicate": "^0.13.0",
+    "replicate": "^0.32.0",
     "serverless-mysql": "^1.5.5",
     "tailwindcss": "3.3.3",
     "tidb": "^0.1.0",

@@ -34,7 +34,7 @@ const AddData = () => {
       });
 
       if (response.ok) {
-        console.log('Data added successfully!');
+        // console.log('Data added successfully!');
         setFormData({
           event_date_time: '',
           city: '',

@@ -5,18 +5,20 @@ export default async function handler(req, res) {
 
   const options = {
     method: 'GET',
-    url: 'https://bing-news-search1.p.rapidapi.com/news/search',
+    url: 'https://google-news13.p.rapidapi.com/search',
     params: {
-      q: 'UFO', // Search query for UFO news
-      freshness: 'Day', // Show news from the past day
-      safeSearch: 'Off',
-      textFormat: 'Raw',
-      count // Limit the number of results
+      keyword: 'UFO',
+      lr: 'en-US',
+      count
     },
+    // headers: {
+    //   'X-BingApis-SDK': 'true',
+    //   'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
+    //   'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+    // }
     headers: {
-      'X-BingApis-SDK': 'true',
-      'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
-      'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+      'x-rapidapi-key': process.env.RAPIDAPI_KEY,
+      'x-rapidapi-host': 'google-news13.p.rapidapi.com'
     }
   };
 

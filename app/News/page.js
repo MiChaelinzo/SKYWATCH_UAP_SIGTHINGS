@@ -10,7 +10,12 @@ const NewsPage = () => {
     async function fetchNews() {
       try {
         const response = await axios.get('/api/ufoNews');
-        setNews(response.data.value || []);
+        // console.log('response:', response);
+        if (response.data.status === 'success') {
+          setNews(response.data.items || []);
+        } else {
+          console.error('Error fetching news: Invalid response status');
+        }
       } catch (error) {
         console.error('Error fetching news:', error);
       }
@@ -28,16 +33,17 @@ const NewsPage = () => {
 
       <div className='py-8'>
         <ul className="max-w-4xl mx-auto text-white">
-          {news.map((article) => (
-            <li key={article.url} className="mb-4">
+          {news.map((article, index) => (
+            <li key={index} className="mb-4">
               <a
-                href={article.url}
+                href={article.newsUrl} // Updated property to match the new response structure
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-secondary font-medium"
               >
-                {article.name}
+                {article.title}
               </a>
+              <p>{article.snippet}</p>
             </li>
           ))}
         </ul>
