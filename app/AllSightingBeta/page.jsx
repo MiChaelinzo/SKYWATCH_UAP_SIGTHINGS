@@ -13,7 +13,7 @@ export default function Page() {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`/api/getData3Vector?limit=${loadedRows}`)
+    fetch(`/api/getData2Vector?limit=${loadedRows}`)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
@@ -33,16 +33,14 @@ export default function Page() {
     <div className="py-10">
       <div className="grid place-items-center">
         <div className="text-5xl text-center text-white font-tektur relative">All Sightings
-          <h1 className="text-xl text-center text-secondary font-tektur absolute -top-4 -right-12">HATCH</h1>
+          <h1 className="text-xl text-center text-secondary font-tektur absolute -top-2 -right-12">Beta</h1>
+
+
         </div>
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
-
-        <h4 className="text-base text-center text-white font-tektur relative">Larry Hatch was a computer programmer by trade who created one of the most comprehensive databases of UAP/UFO sightings. Learn more about him here: <a href="https://tinyurl.com/2p95d7ts" target="_blank" rel="noopener noreferrer">Hatch Link</a>  </h4>
-        <h2 className='text-base text-center text-white font-tektur relative'>Search by description and use your mouse or keyboard to scroll to the right for more information!</h2>
-
-        {/* <h2 className="text-base text-center text-white font-tektur relative">CTRL+F for search. Type the city or year, etc. Click the page and use your keyboard to scroll to right for more comprehensive information!</h2> */}
-
       </div>
+
+      <h2 className="text-xl text-center text-white font-tektur relative">Search by description and use your mouse or keyboard to scroll to the right for more information!</h2>
 
       {
         loading ? (
@@ -56,13 +54,21 @@ export default function Page() {
             <DataTable
               columns={dataTableColumns}
               data={data}
-              userSearchColumn='desc'
+              userSearchColumn='description'
               inputPlaceHolder='Search by description'
             />
           </div>
         )
       }
 
+      {/* <div className="flex justify-center mt-4">
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600"
+          onClick={handleLoadMore}
+        >
+          Load More
+        </button>
+      </div> */}
     </div>
   );
 }

@@ -23,9 +23,7 @@ export default function handler(req, res) {
       return;
     }
 
-    // Table with vector data
-      connection.query(`SELECT * FROM UAP_Sightings.UAP_Sightings WHERE city IN ("Doha", "Dallas", "Lachute (Canada)") ORDER BY CASE WHEN city LIKE 'Doha%' THEN 1 ELSE 2 END LIMIT 1000;`, function (err, rows) {
-
+    connection.query(`SELECT * FROM UAPSIGHTINGS_1.uapsightings_1 LIMIT 1000;`, function (err, rows) {
       if (err) {
         console.error(err);
         res.status(500).json({ error: 'Failed to fetch data from the database.' });
