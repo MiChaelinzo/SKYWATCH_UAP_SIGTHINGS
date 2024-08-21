@@ -1,6 +1,6 @@
-#### 🛸 SkyWatch: The Global UAP Sightings Database 
+#### 🛸🚀 SkyWatch: The Global UAP Sightings Database 
 
-###### 🛸👽 SkyWatch is the world's most comprehensive platform for exploring and reporting Unidentified Aerial Phenomena (UAP) sightings. Combining a massive database of over 500,000 reports with cutting-edge AI image generation and powerful semantic search capabilities, SkyWatch lets users dive deep into the mystery of UAPs, uncover hidden patterns, and contribute their own data to the ongoing search for answers.
+###### 🛸🌠👽 SkyWatch is the world's most comprehensive platform for exploring and reporting Unidentified Aerial Phenomena (UAP) sightings. Combining a massive database of over 500,000 reports with cutting-edge AI image generation and powerful semantic search capabilities, SkyWatch lets users dive deep into the mystery of UAPs, uncover hidden patterns, and contribute their own data to the ongoing search for answers.
 
 ## 🗣️ Elevator Pitch:
 
