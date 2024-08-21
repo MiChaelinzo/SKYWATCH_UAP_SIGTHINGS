@@ -1,6 +1,6 @@
 #### 🛸 SkyWatch: The Global UAP Sightings Database 
 
-#### 🛸👽 SkyWatch is the world's most comprehensive platform for exploring and reporting Unidentified Aerial Phenomena (UAP) sightings. Combining a massive database of over 500,000 reports with cutting-edge AI image generation and powerful semantic search capabilities, SkyWatch lets users dive deep into the mystery of UAPs, uncover hidden patterns, and contribute their own data to the ongoing search for answers.
+###### 🛸👽 SkyWatch is the world's most comprehensive platform for exploring and reporting Unidentified Aerial Phenomena (UAP) sightings. Combining a massive database of over 500,000 reports with cutting-edge AI image generation and powerful semantic search capabilities, SkyWatch lets users dive deep into the mystery of UAPs, uncover hidden patterns, and contribute their own data to the ongoing search for answers.
 
 ## 🗣️ Elevator Pitch:
 
@@ -21,11 +21,12 @@ SkyWatch is a web app (deployed on Vercel) that offers:
 * **AI Image Generation:** Users can input sighting details, and the app generates realistic UAP images using SDXL 0.9, enhancing data visualization and analysis.
 * **User Reporting:** A user-friendly interface allows for the submission of new sightings, contributing to the growing database.
 * **News Aggregation:**  Stay up-to-date on the latest UAP news from around the world with an AI-powered news feed. 
-
+![Alt text](https://i.imgur.com/je3HQZ6.png)
 ## ⚙️ How we built it:
 
 * **Database:** TiDB Cloud Serverless (v6.6.0, AWS) provides a scalable and reliable database solution.  We leverage **TiDB's Vector Search feature** to enable **fast and accurate semantic similarity searches across our massive dataset of UAP reports**. 
-* **Web Application:**  Developed using Vercel, Next.js, JavaScript, CSS, and Node.js. 
+![Alt text](https://i.imgur.com/U0uldXe.png)
+* **Web Application:**  Developed using Vercel, Next.js, JavaScript, CSS, HTML, and Node.js. 
 * **AI Integration:**  SDXL 0.9 is integrated for on-demand image generation.
 
 ## 🛰️ Benefits of TiDB Vector Search for SkyWatch:
@@ -49,8 +50,8 @@ SkyWatch is a web app (deployed on Vercel) that offers:
 
 ## 📖 What we learned
 
-
 * **The power of vector search for unstructured data:**  TiDB Vector Search enabled us to perform complex queries on textual descriptions of UAP sightings, something that would be difficult or impossible with traditional keyword-based search. 
+![Alt text](https://i.imgur.com/AbFbohh.png)
 * **Full-stack web development** using modern tools and frameworks.
 * **Cloud database management** and optimization with TiDB.
 * **Practical application of AI** for image generation and data analysis. 
@@ -66,4 +67,18 @@ SkyWatch is a web app (deployed on Vercel) that offers:
 * **User-Generated Content:** Allowing users to upload images and videos alongside their reports.
 * **Machine Learning Analysis:**  Applying machine learning algorithms to the database to identify patterns, anomalies, and potential explanations for UAP sightings.
 
+## Disclaimer 📄
+
+SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for exploring these intriguing phenomena, it's important to remember that **SkyWatch does not, and cannot, definitively prove or disprove the existence of extraterrestrial life.**
+
+The database captures subjective eyewitness accounts, which can be influenced by a variety of factors:  misidentification of known objects, atmospheric conditions, limitations of human perception, and even hoaxes.  Many reported UAPs can likely be attributed to more mundane explanations, such as:
+
+* **Commercial or military aircraft:**  Unfamiliar aircraft or unusual flight paths can easily be misconstrued. 
+* **Satellites and space debris:**  Reflecting sunlight can create unexpected visual effects, especially at night.
+* **Drones:**  The increasing prevalence of drones, both commercial and private, adds to the complexity of airspace. 
+* **Weather phenomena:**  Unusual cloud formations, atmospheric distortions, or even meteorological balloons can create perplexing sightings. 
+
+SkyWatch's strength lies in its ability to organize and analyze this data, potentially revealing patterns or anomalies that warrant further investigation. However, **correlation does not equal causation.** Even if patterns emerge, they might point to human activities, natural phenomena, or as-yet-undiscovered aspects of our own world. 
+
+Ultimately, SkyWatch provides a valuable resource for UAP research, but **the question of extraterrestrial life requires rigorous scientific inquiry, careful analysis, and extraordinary evidence.**  SkyWatch is a step in the right direction, but the journey to understanding UAPs is far from over. 
 
