@@ -40,7 +40,7 @@ export default function Page() {
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
       </div>
 
-       <h2 className='text-base text-center text-white font-tektur relative'>Search by description and use your mouse or keyboard to scroll to the right for more information!</h2>
+       <h2 className='text-base text-center text-white font-tektur relative'>Search by description and use your mouse/keyboard/touchpad to scroll to the right for more information!</h2>
 
       {
         loading ? (
