@@ -38,7 +38,7 @@ export default function Page() {
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
 
         <h4 className="text-base text-center text-white font-tektur relative">Larry Hatch was a computer programmer by trade who created one of the most comprehensive databases of UAP/UFO sightings. Learn more about him here: <a href="https://tinyurl.com/2p95d7ts" target="_blank" rel="noopener noreferrer">Hatch Link</a>  </h4>
-        <h2 className='text-base text-center text-white font-tektur relative'>Search by description and use your mouse/keyboard/touchpad to scroll to the right for more information!</h2>
+        <h2 className='text-base text-center text-white font-tektur relative'>Search & scroll for more details.</h2>
 
         {/* <h2 className="text-base text-center text-white font-tektur relative">CTRL+F for search. Type the city or year, etc. Click the page and use your keyboard to scroll to right for more comprehensive information!</h2> */}
 
