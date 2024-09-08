@@ -37,7 +37,7 @@ export default function Page() {
         </div>
         <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
 
-        <h4 className="text-base text-center text-white font-tektur relative">Larry Hatch, a computer programmer, built one of the extensive UAP/UFO sighting databases: <a href="https://tinyurl.com/2p95d7ts" target="_blank" rel="noopener noreferrer">Larry Hatch Blog</a>  </h4>
+        <h4 className="text-base text-center text-white font-tektur relative">Larry Hatch, a computer programmer, built one of the extensive UAP/UFO sighting databases: <a href="https://tinyurl.com/2p95d7ts" target="_blank" rel="noopener noreferrer">Larry Hatch blog link</a>  </h4>
         <h2 className='text-base text-center text-white font-tektur relative'>Search & scroll for more details.</h2>
 
         {/* <h2 className="text-base text-center text-white font-tektur relative">CTRL+F for search. Type the city or year, etc. Click the page and use your keyboard to scroll to right for more comprehensive information!</h2> */}
