@@ -59,9 +59,6 @@ export default function page() {
 
       <div className="md:grid md:grid-cols-2 pt-12 items-center">
         <div>
-        <Image src="/universe.jpg" alt="Disclaimer Image" width="500" height="1200" /> 
-        </div>
-        <div>
           <h1 className="text-3xl md:text-6xl font-tektur">Disclaimer 📄:</h1>
           <p className="text-xl text-justify py-4 tracking-wider">
             SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for
@@ -86,16 +83,15 @@ export default function page() {
               **Weather phenomena:** Unusual cloud formations, atmospheric distortions, or even meteorological balloons can create perplexing sightings.
             </li>
           </ul>
-
-          <p className="text-xl text-justify py-4 tracking-wider">
-            SkyWatch's strength lies in its ability to organize and analyze this data, potentially revealing patterns or anomalies that warrant further
-            investigation. However, **correlation does not equal causation.** Even if patterns emerge, they might point to human activities, natural phenomena, or
-            as-yet-undiscovered aspects of our own world.
-          </p>
+              
           <p className="text-xl text-justify py-4 tracking-wider">
             Ultimately, SkyWatch provides a valuable resource for UAP research, but **the question of extraterrestrial life requires rigorous scientific inquiry,
             careful analysis, and extraordinary evidence.** SkyWatch is a step in the right direction, but the journey to understanding UAPs is far from over.
           </p>
+          <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black">
+          <Image src="/universe.jpg" alt="Disclaimer Image" width="500" height="1200" /> 
+        </div> 
+     
         </div>
       </div>
     </div>
