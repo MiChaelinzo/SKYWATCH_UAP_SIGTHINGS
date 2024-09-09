@@ -59,7 +59,7 @@ export default function page() {
 
       <div className="md:grid md:grid-cols-2 pt-12 items-center">
         <div>
-        <Image src="/heroimage.jpg" alt="Disclaimer Image" width="500" height="1200" /> 
+        <Image src="/universe.jpg" alt="Disclaimer Image" width="500" height="1200" /> 
         </div>
         <div>
           <h1 className="text-3xl md:text-6xl font-tektur">Disclaimer 📄:</h1>
