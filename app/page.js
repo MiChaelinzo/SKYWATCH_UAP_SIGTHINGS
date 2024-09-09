@@ -39,7 +39,7 @@ export default function page() {
        </div>
       </div>
     </div>
-          <div className='md:grid md:grid-cols-2 items-center pt-10'>
+            <div className='md:grid md:grid-cols-2 pt-12 items-center'>
         <div className=''>
           <h1 className='text-3xl md:text-6xl font-tektur'>Disclaimer 📄: </h1>
           <p className='text-xl text-justify py-4 tracking-wider'>SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for exploring these intriguing phenomena, it's important to remember that **SkyWatch does not, and cannot, definitively prove or disprove the existence of extraterrestrial life. </p>
@@ -57,7 +57,7 @@ export default function page() {
 
         </div>
         <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black">
-          <Image src='/hero-image.jpg' alt="img" width="500" height="300" />
+          <Image src='/hero-image.jpg' alt="img" width="1248" height="702" />
         </div>
       </div>
   )
