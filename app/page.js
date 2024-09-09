@@ -36,7 +36,9 @@ export default function page() {
             <li className="list-disc"> Easy Switch from MySQL:  Already using MySQL?  Migrating to <a href="https://tidbcloud.com/" target="_blank" rel="noopener noreferrer"> "TIDB Cloud Serverless" </a> is a breeze, letting you unlock powerful new features without rewriting your whole application.</li>
             <li className="list-disc"> Find Answers Fast: <a href="https://tidbcloud.com/" target="_blank" rel="noopener noreferrer"> "TIDB Cloud Serverless" </a> lightning-fast queries make exploring our massive UAP database incredibly responsive.  No more waiting around for results – dig into the data and uncover the truth!</li>
           </ul>
-
+       </div>
+      </div>
+    </div>
           <div className='md:grid md:grid-cols-2 items-center pt-10'>
         <div className=''>
           <h1 className='text-3xl md:text-6xl font-tektur'>Disclaimer 📄: </h1>
@@ -58,9 +60,5 @@ export default function page() {
           <Image src='/hero-image.jpg' alt="img" width="500" height="300" />
         </div>
       </div>
-
-        </div>
-      </div>
-    </div>
   )
 }
