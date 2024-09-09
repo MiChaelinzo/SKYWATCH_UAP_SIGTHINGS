@@ -89,19 +89,19 @@ export default function page() {
             careful analysis, and extraordinary evidence.** SkyWatch is a step in the right direction, but the journey to understanding UAPs is far from over.
           </p>
          <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black image-container">
-    <Image 
-        src="/universe.jpg" 
-        alt="Disclaimer Image" 
-        width="500" 
-        height="2160" 
-        style={{ objectFit: 'contain' }} // Or use 'cover' or 'fill' 
-    /> 
-</div>
+          <Image 
+              src="/universe.jpg" 
+              alt="Disclaimer Image" 
+              width="500" 
+              height="2160" 
+              style={{ objectFit: 'contain' }} 
+          /> 
+          </div>
+         <div className="mt-8 text-sm text-gray-500">
+         <hr className="my-4" />
+         <p id="footnote-1">
+          <sup>1</sup> SkyWatch is a tool for exploring reported UAP sightings. It does not definitively prove or disprove the existence of extraterrestrial life. Sightings can often be attributed to known objects or phenomena. </p> 
 
-// CSS 
-.image-container {
-    height: auto;  // Or min-height: 100%; 
-}
         </div>
       </div>
     </div>
