@@ -59,6 +59,9 @@ export default function page() {
 
       <div className="md:grid md:grid-cols-2 pt-12 items-center">
         <div>
+        <Image src="/heroimage.jpg" alt="Disclaimer Image" width="500" height="1200" /> 
+        </div>
+        <div>
           <h1 className="text-3xl md:text-6xl font-tektur">Disclaimer 📄:</h1>
           <p className="text-xl text-justify py-4 tracking-wider">
             SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for
