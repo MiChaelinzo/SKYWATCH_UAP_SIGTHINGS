@@ -89,7 +89,7 @@ export default function page() {
             careful analysis, and extraordinary evidence.** SkyWatch is a step in the right direction, but the journey to understanding UAPs is far from over.
           </p>
           <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black">
-          <Image src="/universe.jpg" alt="Disclaimer Image" width="500" height="1200" /> 
+          <Image src="/universe.jpg" alt="Disclaimer Image" width="500" height="2160" /> 
         </div> 
      
         </div>
