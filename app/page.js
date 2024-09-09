@@ -88,10 +88,20 @@ export default function page() {
             Ultimately, SkyWatch provides a valuable resource for UAP research, but **the question of extraterrestrial life requires rigorous scientific inquiry,
             careful analysis, and extraordinary evidence.** SkyWatch is a step in the right direction, but the journey to understanding UAPs is far from over.
           </p>
-          <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black">
-          <Image src="/universe.jpg" alt="Disclaimer Image" width="500" height="2160" /> 
-        </div> 
-     
+         <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black image-container">
+    <Image 
+        src="/universe.jpg" 
+        alt="Disclaimer Image" 
+        width="500" 
+        height="2160" 
+        style={{ objectFit: 'contain' }} // Or use 'cover' or 'fill' 
+    /> 
+</div>
+
+// CSS 
+.image-container {
+    height: auto;  // Or min-height: 100%; 
+}
         </div>
       </div>
     </div>
