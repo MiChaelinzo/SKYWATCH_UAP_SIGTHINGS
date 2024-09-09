@@ -56,53 +56,11 @@ export default function page() {
           </ul>
         </div>
       </div>
-
-      <div className="md:grid md:grid-cols-2 pt-12 items-center">
-        <div>
-          <h1 className="text-3xl md:text-6xl font-tektur">Disclaimer 📄:</h1>
-          <p className="text-xl text-justify py-4 tracking-wider">
-            SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for
-            exploring these intriguing phenomena, it's important to remember that **SkyWatch does not, and cannot, definitively prove or disprove the existence of
-            extraterrestrial life.
-          </p>
-          <p className="text-xl text-justify py-4 tracking-wider">
-            The database captures subjective eyewitness accounts, which can be influenced by a variety of factors: misidentification of known objects, atmospheric
-            conditions, limitations of human perception, and even hoaxes. Many reported UAPs can likely be attributed to more mundane explanations, such as:
-          </p>
-          <ul className="text-xl">
-            <li className="list-disc">
-              **Commercial or military aircraft:** Unfamiliar aircraft or unusual flight paths can easily be misconstrued.
-            </li>
-            <li className="list-disc">
-              **Satellites and space debris:** Reflecting sunlight can create unexpected visual effects, especially at night.
-            </li>
-            <li className="list-disc">
-              **Drones:** The increasing prevalence of drones, both commercial and private, adds to the complexity of airspace.
-            </li>
-            <li className="list-disc">
-              **Weather phenomena:** Unusual cloud formations, atmospheric distortions, or even meteorological balloons can create perplexing sightings.
-            </li>
-          </ul>
-              
-          <p className="text-xl text-justify py-4 tracking-wider">
-            Ultimately, SkyWatch provides a valuable resource for UAP research, but **the question of extraterrestrial life requires rigorous scientific inquiry,
-            careful analysis, and extraordinary evidence.** SkyWatch is a step in the right direction, but the journey to understanding UAPs is far from over.
-          </p>
-         <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black image-container">
-          <Image 
-              src="/universe.jpg" 
-              alt="Disclaimer Image" 
-              width="500" 
-              height="2160" 
-              style={{ objectFit: 'contain' }} 
-          /> 
-          </div>
-         <div className="mt-8 text-sm text-gray-500">
-         <hr className="my-4" />
-         <p id="footnote-1">
-          <sup>1</sup> SkyWatch is a tool for exploring reported UAP sightings. It does not definitively prove or disprove the existence of extraterrestrial life. Sightings can often be attributed to known objects or phenomena. </p> 
-
-        </div>
+      <div className="mt-8 text-sm text-gray-500">
+        <hr className="my-4" />
+        <p id="footnote-1">
+          <sup>1</sup> SkyWatch is a tool for exploring reported UAP sightings but does not prove or disprove the existence of extraterrestrial life. Many sightings can be attributed to known objects or phenomena. 
+        </p> 
       </div>
     </div>
   );
