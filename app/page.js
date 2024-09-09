@@ -71,10 +71,6 @@ export default function page() {
             <li>Drones: The increasing prevalence of drones, both commercial and private, adds to the complexity of airspace.</li>
             <li>Weather phenomena: Unusual cloud formations, atmospheric distortions, or even meteorological balloons can create perplexing sightings.</li>
           </ul>
-          <br />
-          SkyWatch's strength lies in its ability to organize and analyze this data, potentially revealing patterns or anomalies that warrant further investigation. However, correlation does not equal causation. Even if patterns emerge, they might point to human activities, natural phenomena, or as-yet-undiscovered aspects of our own world. 
-          <br /><br />
-          Ultimately, SkyWatch provides a valuable resource for UAP research, but the question of extraterrestrial life requires rigorous scientific inquiry, careful analysis, and extraordinary evidence. SkyWatch is a step in the right direction, but the journey to understanding UAPs is far from over. 
         </p> 
       </div>
     </div>
