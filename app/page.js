@@ -60,7 +60,7 @@ export default function page() {
       {/* Footnote Section */}
       <div className="mt-8 text-sm text-gray-500">
         <hr className="my-4" />
-        <p id="footnote-1">
+        <div id="footnote-1">
           <sup>1</sup> SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for exploring these intriguing phenomena, it's important to remember that SkyWatch does not, and cannot, definitively prove or disprove the existence of extraterrestrial life. 
           <br /><br />
           The database captures subjective eyewitness accounts, which can be influenced by a variety of factors: misidentification of known objects, atmospheric conditions, limitations of human perception, and even hoaxes. Many reported UAPs can likely be attributed to more mundane explanations, such as:
@@ -71,7 +71,7 @@ export default function page() {
             <li>Drones: The increasing prevalence of drones, both commercial and private, adds to the complexity of airspace.</li>
             <li>Weather phenomena: Unusual cloud formations, atmospheric distortions, or even meteorological balloons can create perplexing sightings.</li>
           </ul>
-        </p> 
+        </div> 
       </div>
     </div>
 

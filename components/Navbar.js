@@ -41,12 +41,16 @@ export default function Navbar() {
                             </div>
                         </Link>
 
-                        <Link href="/News">
+                        {/* <Link href="/News">
                             <span className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center dark:hover:bg-navHover hover:bg-secondary cursor-pointer hover:text-white">News</span>
-                        </Link>
+                        </Link> */}
 
                         <Link href="/Map">
                             <span className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center dark:hover:bg-navHover hover:bg-secondary cursor-pointer hover:text-white">Map</span>
+                        </Link>
+
+                        <Link href="/Chat">
+                            <span className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center dark:hover:bg-navHover hover:bg-secondary cursor-pointer hover:text-white">AI Chat</span>
                         </Link>
 
                         <Link href="/AIBackground">
