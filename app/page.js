@@ -39,8 +39,7 @@ export default function page() {
               takes care of everything, so you can focus on exploring UAP data, not managing servers. It's like having a team of database experts on call 24/7!
             </li>
             <li className="list-disc">
-              AI-Powered Visuals, Unlimited: Imagine any UAP, generate its image with cutting-edge Stable Diffusion XL technology... and download as many as you like, all powered by{' '}
-              <a href="https://tidbcloud.com/" target="_blank" rel="noopener noreferrer">"TIDB Cloud Serverless"</a>{' '}
+SKYWATCH Sentinel's powerful AI, leveraging NVIDIA's advanced language models via the https://integrate.api.nvidia.com/v1 endpoint, provides real-time analysis based on historical data and machine learning algorithms.   
               speed.
             </li>
             <li className="list-disc">
