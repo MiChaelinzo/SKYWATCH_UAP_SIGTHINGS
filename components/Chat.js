@@ -53,7 +53,7 @@ export default function Chat() {
             <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder='Ask about UAP's...'
+                placeholder='Ask about UAPs...'
                 className='border border-gray-300 p-2 mb-2 rounded'
                 disabled={loading}
             />
