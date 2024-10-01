@@ -1,14 +1,14 @@
 'use client'
 
-import { useState } from 'react';
-import axios from 'axios';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useState } from 'react'
+import axios from 'axios'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 export default function Chat() {
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [selectedModel, setSelectedModel] = useState('nvidia/nemotron-mini-4b-instruct'); // New state for selected model
+    const [selectedModel, setSelectedModel] = useState('nvidia/nemotron-mini-4b-instruct');
 
     const Models = [
         'qwen/qwen2-7b-instruct',
@@ -26,7 +26,7 @@ export default function Chat() {
         setLoading(true);
 
         try {
-            const response = await axios.post('/api/chat', { question: input, model: selectedModel }); // Include selected model
+            const response = await axios.post('/api/chat', { question: input, model: selectedModel });
             setMessages([...messages, { user: input, ai: response.data.answer }]);
             setInput('');
         } catch (error) {
@@ -60,7 +60,7 @@ export default function Chat() {
 
             <div className='mt-1 mb-2'>
                 <h1 className='text-gray-200'>Select Model</h1>
-                <Select defaultValue={selectedModel} onValueChange={setSelectedModel}> {/* Update selected model on change */}
+                <Select defaultValue={selectedModel} onValueChange={setSelectedModel}>
                     <SelectTrigger>
                         <SelectValue placeholder='Select Model' />
                     </SelectTrigger>
