@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/components/*": ["./components/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/app/*": ["./app/*"], // Add this line if you want to use "@/app" alias
+      "@/pages/api/*": ["./pages/api/*"] // Add this if you want to use "@/pages/api" alias
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }
