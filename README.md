@@ -1,3 +1,12 @@
+### To Use the Updated API Endpoints:
+
+- 1. Replace the contents of your API endpoint files in pages/api/ with these updated versions.
+
+- 2. Install formidable: If you didn't already, run npm install formidable or yarn add formidable in your project directory (important for pages/api/audio.js).
+
+- 3. Run your Next.js development server (npm run dev or yarn dev).
+
+
 ### 🛸🚀 SkyWatch: The Global UAP Sightings Database 
 
 ###### 🛸🌠👽 SkyWatch is the world's most comprehensive platform for exploring and reporting Unidentified Aerial Phenomena (UAP) sightings. Combining a massive database of over 500,000 reports with cutting-edge AI image generation and powerful semantic search capabilities, SkyWatch lets users dive deep into the mystery of UAPs, uncover hidden patterns, and contribute their own data to the ongoing search for answers.
