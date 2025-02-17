@@ -1,6 +1,9 @@
 "use client"
 
 import { useState, useRef, useEffect } from 'react';
+import ScreenShare from './components/ScreenShare'; // Corrected import path - removed .js, relative to page.js
+import LiveVideo from './components/LiveVideo';     // Corrected import path - removed .js, relative to page.js
+import AudioRecorder from './components/AudioRecorder'; // Corrected import path - removed .js, relative to page.js and corrected filename
 
 function AIArt() {
     const [inputValue, setInputValue] = useState('');
