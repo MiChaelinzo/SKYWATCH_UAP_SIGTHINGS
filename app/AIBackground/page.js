@@ -1,9 +1,13 @@
 "use client"
 
-import { useState, useRef, useEffect } from 'react';
-import ScreenShare from './components/ScreenShare'; // Corrected import path - removed .js, relative to page.js
-import LiveVideo from './components/LiveVideo';     // Corrected import path - removed .js, relative to page.js
-import AudioRecorder from './components/AudioRecorder'; // Corrected import path - removed .js, relative to page.js and corrected filename
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+// Corrected import paths for app/page.js - going UP one level to root 'components' directory
+import AudioRecorder from '../components/AudioRecorder';
+import ScreenShare from '../components/ScreenShare';
+import LiveVideo from '../components/LiveVideo';
+import ChatComponent from '../components/ChatComponent'; // Keep if you are still using it
 
 function AIArt() {
     const [inputValue, setInputValue] = useState('');
