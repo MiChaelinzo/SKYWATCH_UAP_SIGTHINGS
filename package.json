@@ -40,5 +40,6 @@
     "tailwindcss-animate": "^1.0.7",
     "tidb": "^0.1.0",
     "tls": "^0.0.1"
+    "formidable": "^3.5.1"
   }
 }
