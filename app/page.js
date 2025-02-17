@@ -1,13 +1,16 @@
+// app/page.js
 "use client"
-
-import AudioRecorder from './components/AudioRecorder';
-import ScreenShare from './components/ScreenShare';
-import LiveVideo from './components/LiveVideo';
-import ChatComponent from './components/ChatComponent'; // Keep this if you are still using it
 
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+// Corrected import paths for app/page.js - START WITH `./AIBackground/...` - VERY IMPORTANT
+import AudioRecorder from './AIBackground/components/AudioRecorder';
+import ScreenShare from './AIBackground/components/ScreenShare';
+import LiveVideo from './AIBackground/components/LiveVideo';
+import ChatComponent from './AIBackground/components/ChatComponent'; // Keep if you are still using it
+
 
 export default function page() {
   return (
