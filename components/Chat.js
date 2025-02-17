@@ -4,11 +4,11 @@ import { useState } from 'react'
 import axios from 'axios'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
-// Import the multimodal components
-import AudioRecorder from '@/app/AIBackground/components/AudioRecorder'; // Adjust path if necessary
-import ScreenShare from '@/app/AIBackground/components/ScreenShare';     // Adjust path if necessary
-import LiveVideo from '@/app/AIBackground/components/LiveVideo';       // Adjust path if necessary
-import ChatComponent from '@/app/AIBackground/components/ChatComponent'; // Adjust path if necessary - if you want to use separate ChatComponent
+// Corrected import paths - all components in the SAME 'components' directory
+import AudioRecorder from './AudioRecorder';
+import ScreenShare from './ScreenShare';
+import LiveVideo from './LiveVideo';
+import ChatComponent from './ChatComponent'; // Keep if you are using it
 
 export default function Chat() {
     const [input, setInput] = useState('');
@@ -121,3 +121,5 @@ export default function Chat() {
         </div>
     );
 }
+
+export default Chat;
