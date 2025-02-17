@@ -4,6 +4,12 @@ import { useState } from 'react'
 import axios from 'axios'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
+// Import the multimodal components
+import AudioRecorder from '@/app/AIBackground/components/AudioRecorder'; // Adjust path if necessary
+import ScreenShare from '@/app/AIBackground/components/ScreenShare';     // Adjust path if necessary
+import LiveVideo from '@/app/AIBackground/components/LiveVideo';       // Adjust path if necessary
+import ChatComponent from '@/app/AIBackground/components/ChatComponent'; // Adjust path if necessary - if you want to use separate ChatComponent
+
 export default function Chat() {
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
@@ -26,11 +32,20 @@ export default function Chat() {
         setLoading(true);
 
         try {
-            const response = await axios.post('/api/chat', { question: input, model: selectedModel });
-            setMessages([...messages, { user: input, ai: response.data.answer }]);
+            // Make a POST request to /api/chat
+            const response = await axios.post('/api/chat', {
+                message: input, // Sending user input as 'message'
+                senderId: 'user-chat-page', // Example sender ID, adjust as needed
+                roomId: 'ai-chat-room',    // Example room ID, adjust as needed
+                model: selectedModel      // Still sending model
+            });
+
+            // Display the API response
+            setMessages([...messages, { user: input, ai: response.data.message }]);
             setInput('');
         } catch (error) {
             console.error('Error sending message:', error);
+            setMessages([...messages, { user: input, ai: "Error: Could not send message." }]);
         } finally {
             setLoading(false);
         }
@@ -38,51 +53,71 @@ export default function Chat() {
 
     return (
         <div className='flex flex-col p-4'>
-            <div className='overflow-y-auto h-96 border border-gray-300 p-2 mb-4 rounded'>
-                {messages.map((msg, index) => (
-                    <div key={index} className='my-4'>
-                        <strong className='text-white'>User:</strong> <span className='text-white'>{msg.user}</span><br />
-                        <strong className='text-white'>SkyWatch AI:</strong> <span className='text-white'>{msg.ai}</span>
-                    </div>
-                ))}
-                {loading && (
-                    <div className='my-4 text-gray-500'>Processing...</div>
-                )}
+            {/* AI Chat Section */}
+            <div className='mb-8'>
+                <div className='overflow-y-auto h-96 border border-gray-300 p-2 mb-4 rounded'>
+                    {messages.map((msg, index) => (
+                        <div key={index} className='my-4'>
+                            <strong className='text-white'>User:</strong> <span className='text-white'>{msg.user}</span><br />
+                            <strong className='text-white'>SkyWatch AI:</strong> <span className='text-white'>{msg.ai}</span>
+                        </div>
+                    ))}
+                    {loading && (
+                        <div className='my-4 text-gray-500'>Processing...</div>
+                    )}
+                </div>
+
+                <input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder='Ask about UAPs...'
+                    className='border border-gray-300 p-2 mb-2 rounded'
+                    disabled={loading}
+                />
+
+                <div className='mt-1 mb-2'>
+                    <h1 className='text-gray-200'>Select Model</h1>
+                    <Select defaultValue={selectedModel} onValueChange={setSelectedModel}>
+                        <SelectTrigger>
+                            <SelectValue placeholder='Select Model' />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectGroup label='Models'>
+                                {Models.map((model, index) => (
+                                    <SelectItem key={index} value={model}>
+                                        {model}
+                                    </SelectItem>
+                                ))}
+                            </SelectGroup>
+                        </SelectContent>
+                    </Select>
+                </div>
+
+                <button
+                    onClick={handleSend}
+                    className={`bg-blue-500 text-white p-2 rounded ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    disabled={loading}
+                >
+                    Send
+                </button>
             </div>
 
-            <input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder='Ask about UAPs...'
-                className='border border-gray-300 p-2 mb-2 rounded'
-                disabled={loading}
-            />
+            {/* Multimodal Features Section */}
+            <div className="my-8 p-4 border border-gray-300 rounded-md bg-gray-800 text-white">
+                <h2 className="text-2xl font-semibold mb-4">Multimodal Tools</h2>
 
-            <div className='mt-1 mb-2'>
-                <h1 className='text-gray-200'>Select Model</h1>
-                <Select defaultValue={selectedModel} onValueChange={setSelectedModel}>
-                    <SelectTrigger>
-                        <SelectValue placeholder='Select Model' />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectGroup label='Models'>
-                            {Models.map((model, index) => (
-                                <SelectItem key={index} value={model}>
-                                    {model}
-                                </SelectItem>
-                            ))}
-                        </SelectGroup>
-                    </SelectContent>
-                </Select>
+                {/* --- Audio Recorder Component --- */}
+                <AudioRecorder />
+
+                {/* --- Screen Share Component --- */}
+                <ScreenShare />
+
+                {/* --- Live Video Component --- */}
+                <LiveVideo />
+
+                {/* --- Optional: Chat Component (if you want a separate chat UI here as well) --- */}
+                {/* <ChatComponent /> */}
             </div>
-
-            <button
-                onClick={handleSend}
-                className={`bg-blue-500 text-white p-2 rounded ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
-                disabled={loading}
-            >
-                Send
-            </button>
         </div>
     );
 }
