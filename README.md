@@ -1,5 +1,41 @@
 
-####You can download or clone it to run it locally in your system etc. You can find the link below in our "Try it out" links etc.
+#### You can download or clone it to run it locally in your system etc. You can find the link below in our "Try it out" links etc.
+
+To run the SKYWATCH_UAP_SIGTHINGS project locally, follow these steps:
+
+1. **Clone the Repository**: Open your terminal and run the following command to clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/MiChaelinzo/SKYWATCH_UAP_SIGTHINGS.git
+   ```
+
+2. **Navigate to the Project Directory**: Change to the project directory using the `cd` command:
+   ```bash
+   cd SKYWATCH_UAP_SIGTHINGS
+   ```
+
+3. **Install Dependencies**: Depending on the project's requirements, you may need to install dependencies. Check the `README.md` file for specific instructions. Common commands include:
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+
+4. **Set Up Environment Variables**: If the project requires environment variables, create a `.env` file in the root directory and add the necessary variables. Refer to the `README.md` or any configuration files for details.
+
+5. **Start the Development Server**: Run the development server using the appropriate command. This is usually specified in the `package.json` file under the `scripts` section. Common commands include:
+   ```bash
+   npm start
+   ```
+   or
+   ```bash
+   yarn start
+   ```
+
+6. **Access the Application**: Open your web browser and navigate to `http://localhost:3000` (or the specified port) to view the application.
+
+For more detailed instructions, refer to the [project's README file](https://github.com/MiChaelinzo/SKYWATCH_UAP_SIGTHINGS).
 
 ## Inspiration 🌌✨
 
