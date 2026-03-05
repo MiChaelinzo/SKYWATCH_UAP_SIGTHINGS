@@ -1,8 +1,5 @@
 import './globals.css'
-import { Rajdhani } from 'next/font/google'
 import Navbar from '@/components/Navbar'
-
-const rajdhani = Rajdhani({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
 export const metadata = {
   title: 'SKYWATCH // UAP SURVEILLANCE NETWORK',
@@ -12,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={rajdhani.className}>
+      <body style={{ fontFamily: 'Rajdhani, system-ui, Arial, sans-serif' }}>
         <Navbar />
         {children}
       </body>
