@@ -13,6 +13,8 @@ const AddData = () => {
     posted: '',
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -34,7 +36,8 @@ const AddData = () => {
       });
 
       if (response.ok) {
-        // console.log('Data added successfully!');
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 3000);
         setFormData({
           event_date_time: '',
           city: '',
@@ -53,296 +56,80 @@ const AddData = () => {
   };
 
   const currentDate = new Date().toISOString().slice(0, 10);
-
   formData.posted = currentDate;
 
+  const fields = [
+    { label: 'Date of Sighting', name: 'event_date_time', type: 'date' },
+    { label: 'City', name: 'city', type: 'text', placeholder: 'Night City' },
+    { label: 'State / Province', name: 'state_provinces', type: 'text', placeholder: 'State of Sighting' },
+    { label: 'Shape of Object', name: 'shape', type: 'text', placeholder: 'Triangle, Sphere, Disc...' },
+    { label: 'Duration', name: 'duration', type: 'time' },
+    { label: 'Incident Summary', name: 'summary', type: 'text', placeholder: 'Describe what you witnessed...' },
+    { label: 'Report Filed', name: 'posted', type: 'text', placeholder: 'Date posted' },
+  ];
 
   return (
-    <>
-      <div>
-        <div className="grid place-items-center">
-          <h1 className="text-5xl text-center text-white font-tektur">Add Sighting</h1>
-          <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
+    <div className="min-h-screen py-10 px-4">
+      <div className="grid place-items-center">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="status-online"></span>
+          <span className="text-xs font-sharetech text-cyber-cyan uppercase tracking-[0.3em]">Secure Upload Channel</span>
         </div>
+        <h1 className="text-4xl md:text-5xl text-center text-cyber-yellow font-orbitron font-bold text-glow-yellow">
+          FILE REPORT
+        </h1>
+        <div className="cyber-divider w-64 my-4"></div>
+      </div>
 
-        <div className='grid place-items-center py-16'>
-          <form onSubmit={handleSubmit} className="relative z-10 w-full max-w-2xl mt-20 lg:mt-0 lg:w-5/12">
-            <div className="relative z-10 flex flex-col items-start justify-start p-10 bg-white shadow-2xl rounded-xl">
-              <div className="relative w-full mt-6 space-y-8">
-                <div className="relative">
-                  <label className="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white">Date of Sighting</label>
+      <div className="grid place-items-center py-8">
+        <form onSubmit={handleSubmit} className="w-full max-w-2xl">
+          <div className="cyber-card p-8 md:p-10">
+            {submitted && (
+              <div className="mb-6 p-3 border border-green-400/50 bg-green-400/10 text-green-400 font-sharetech text-sm uppercase tracking-widest text-center">
+                ✓ Report Filed Successfully — Data Uploaded to SkyWatch Network
+              </div>
+            )}
+
+            <div className="space-y-6">
+              {fields.map((field) => (
+                <div key={field.name} className="relative">
+                  <label className="block text-xs font-sharetech text-cyber-cyan uppercase tracking-[0.2em] mb-2">
+                    {field.label}
+                  </label>
                   <input
-                    type="date"
-                    name="event_date_time" value={formData.event_date_time} onChange={handleChange}
-                    className="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
+                    type={field.type}
+                    name={field.name}
+                    value={formData[field.name]}
+                    onChange={handleChange}
+                    className="cyber-input w-full"
+                    placeholder={field.placeholder || ''}
                   />
                 </div>
+              ))}
 
-                <div className="relative">
-                  <label className="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white">City</label>
-                  <input
-                    type="text"
-                    name="city" value={formData.city} onChange={handleChange}
-                    className="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                  />
-                </div>
-
-                <div className="relative">
-                  <label className="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white">State of Sighting</label>
-                  <input
-                    type="text"
-                    name="state_provinces" value={formData.state_provinces} onChange={handleChange}
-                    className="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder='State of Sighting'
-                  />
-                </div>
-
-                <div className="relative">
-                  <label className="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white">Shape of Sighting</label>
-                  <input
-                    type="text"
-                    name="shape" value={formData.shape} onChange={handleChange}
-                    className="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder='Shape of Sighting'
-                  />
-                </div>
-
-                <div className="relative">
-                  <label className="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white">Duration of Sighting</label>
-                  <input
-                    type="time"
-                    name="duration" value={formData.duration} onChange={handleChange}
-                    className="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder='Duration of Sighting'
-                  />
-                </div>
-
-                <div className="relative">
-                  <label className="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white">Summary of Sighting</label>
-                  <input
-                    type="text"
-                    name="summary" value={formData.summary} onChange={handleChange}
-                    className="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder='Summary of Sighting'
-                  />
-                </div>
-
-                <div className="relative">
-                  <label className="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white">Posted At</label>
-                  <input
-                    type="text"
-                    name="posted" value={formData.posted} onChange={handleChange}
-                    className="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder='Summary of Sighting'
-                  />
-                </div>
-
-                <div className="relative">
-                  <button
-                    className={`inline-block w-full px-5 py-4 text-xl font-medium text-center rounded-lg bg-blue-600 text-white hover:bg-blue-500`}
-                  >
-                    Add Data
-                  </button>
-                </div>
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  className="cyber-btn w-full text-lg py-3"
+                >
+                  Submit Report
+                </button>
               </div>
             </div>
-            <svg className="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-gray-200 fill-current" viewBox="0 0 91 91" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="none" strokeWidth="1" fillRule="evenodd">
-                <g fillRule="nonzero">
-                  <g>
-                    <g>
-                      <circle cx="3.261" cy="3.445" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.445" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.445" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.445" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.445" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.445" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.445" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.445" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 12)">
-                      <circle cx="3.261" cy="3.525" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.525" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.525" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.525" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.525" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.525" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.525" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.525" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 24)">
-                      <circle cx="3.261" cy="3.605" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.605" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.605" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.605" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.605" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.605" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.605" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.605" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 36)">
-                      <circle cx="3.261" cy="3.686" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.686" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.686" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.686" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.686" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.686" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.686" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.686" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 49)">
-                      <circle cx="3.261" cy="2.767" r="2.72"></circle>
-                      <circle cx="15.296" cy="2.767" r="2.719"></circle>
-                      <circle cx="27.333" cy="2.767" r="2.72"></circle>
-                      <circle cx="39.369" cy="2.767" r="2.72"></circle>
-                      <circle cx="51.405" cy="2.767" r="2.72"></circle>
-                      <circle cx="63.441" cy="2.767" r="2.72"></circle>
-                      <circle cx="75.479" cy="2.767" r="2.72"></circle>
-                      <circle cx="87.514" cy="2.767" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 61)">
-                      <circle cx="3.261" cy="2.846" r="2.72"></circle>
-                      <circle cx="15.296" cy="2.846" r="2.719"></circle>
-                      <circle cx="27.333" cy="2.846" r="2.72"></circle>
-                      <circle cx="39.369" cy="2.846" r="2.72"></circle>
-                      <circle cx="51.405" cy="2.846" r="2.72"></circle>
-                      <circle cx="63.441" cy="2.846" r="2.72"></circle>
-                      <circle cx="75.479" cy="2.846" r="2.72"></circle>
-                      <circle cx="87.514" cy="2.846" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 73)">
-                      <circle cx="3.261" cy="2.926" r="2.72"></circle>
-                      <circle cx="15.296" cy="2.926" r="2.719"></circle>
-                      <circle cx="27.333" cy="2.926" r="2.72"></circle>
-                      <circle cx="39.369" cy="2.926" r="2.72"></circle>
-                      <circle cx="51.405" cy="2.926" r="2.72"></circle>
-                      <circle cx="63.441" cy="2.926" r="2.72"></circle>
-                      <circle cx="75.479" cy="2.926" r="2.72"></circle>
-                      <circle cx="87.514" cy="2.926" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 85)">
-                      <circle cx="3.261" cy="3.006" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.006" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.006" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.006" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.006" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.006" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.006" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.006" r="2.719"></circle>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <svg className="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-blue-600 fill-current" viewBox="0 0 91 91" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="none" strokeWidth="1" fillRule="evenodd">
-                <g fillRule="nonzero">
-                  <g>
-                    <g>
-                      <circle cx="3.261" cy="3.445" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.445" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.445" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.445" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.445" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.445" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.445" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.445" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 12)">
-                      <circle cx="3.261" cy="3.525" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.525" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.525" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.525" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.525" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.525" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.525" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.525" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 24)">
-                      <circle cx="3.261" cy="3.605" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.605" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.605" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.605" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.605" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.605" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.605" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.605" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 36)">
-                      <circle cx="3.261" cy="3.686" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.686" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.686" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.686" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.686" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.686" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.686" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.686" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 49)">
-                      <circle cx="3.261" cy="2.767" r="2.72"></circle>
-                      <circle cx="15.296" cy="2.767" r="2.719"></circle>
-                      <circle cx="27.333" cy="2.767" r="2.72"></circle>
-                      <circle cx="39.369" cy="2.767" r="2.72"></circle>
-                      <circle cx="51.405" cy="2.767" r="2.72"></circle>
-                      <circle cx="63.441" cy="2.767" r="2.72"></circle>
-                      <circle cx="75.479" cy="2.767" r="2.72"></circle>
-                      <circle cx="87.514" cy="2.767" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 61)">
-                      <circle cx="3.261" cy="2.846" r="2.72"></circle>
-                      <circle cx="15.296" cy="2.846" r="2.719"></circle>
-                      <circle cx="27.333" cy="2.846" r="2.72"></circle>
-                      <circle cx="39.369" cy="2.846" r="2.72"></circle>
-                      <circle cx="51.405" cy="2.846" r="2.72"></circle>
-                      <circle cx="63.441" cy="2.846" r="2.72"></circle>
-                      <circle cx="75.479" cy="2.846" r="2.72"></circle>
-                      <circle cx="87.514" cy="2.846" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 73)">
-                      <circle cx="3.261" cy="2.926" r="2.72"></circle>
-                      <circle cx="15.296" cy="2.926" r="2.719"></circle>
-                      <circle cx="27.333" cy="2.926" r="2.72"></circle>
-                      <circle cx="39.369" cy="2.926" r="2.72"></circle>
-                      <circle cx="51.405" cy="2.926" r="2.72"></circle>
-                      <circle cx="63.441" cy="2.926" r="2.72"></circle>
-                      <circle cx="75.479" cy="2.926" r="2.72"></circle>
-                      <circle cx="87.514" cy="2.926" r="2.719"></circle>
-                    </g>
-                    <g transform="translate(0 85)">
-                      <circle cx="3.261" cy="3.006" r="2.72"></circle>
-                      <circle cx="15.296" cy="3.006" r="2.719"></circle>
-                      <circle cx="27.333" cy="3.006" r="2.72"></circle>
-                      <circle cx="39.369" cy="3.006" r="2.72"></circle>
-                      <circle cx="51.405" cy="3.006" r="2.72"></circle>
-                      <circle cx="63.441" cy="3.006" r="2.72"></circle>
-                      <circle cx="75.479" cy="3.006" r="2.72"></circle>
-                      <circle cx="87.514" cy="3.006" r="2.719"></circle>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </form>
-
-        </div>
+          </div>
+        </form>
       </div>
-      {/* Footnote Section */}
-      <div className="mt-8 text-sm text-gray-500">
-        <hr className="my-4" />
-        <p id="footnote-1">
-          <sup>1</sup> SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for exploring these intriguing phenomena, it's important to remember that SkyWatch does not, and cannot, definitively prove or disprove the existence of extraterrestrial life.
-          <br /><br />
-          The database captures subjective eyewitness accounts, which can be influenced by a variety of factors: misidentification of known objects, atmospheric conditions, limitations of human perception, and even hoaxes. Many reported UAPs can likely be attributed to more mundane explanations, such as:
-          <br />
-          <ul>
-            <li>Commercial or military aircraft: Unfamiliar aircraft or unusual flight paths can easily be misconstrued.</li>
-            <li>Satellites and space debris: Reflecting sunlight can create unexpected visual effects, especially at night.</li>
-            <li>Drones: The increasing prevalence of drones, both commercial and private, adds to the complexity of airspace.</li>
-            <li>Weather phenomena: Unusual cloud formations, atmospheric distortions, or even meteorological balloons can create perplexing sightings.</li>
-          </ul>
+
+      {/* Footnote */}
+      <div className="max-w-2xl mx-auto mt-8">
+        <div className="cyber-divider mb-4"></div>
+        <p className="text-xs text-gray-600 font-sharetech leading-relaxed" id="footnote-1">
+          <span className="text-cyber-yellow/50 uppercase tracking-widest">// NOTICE:</span> SkyWatch compiles reported UAP sightings.
+          Eyewitness accounts may be influenced by misidentification, atmospheric conditions, or perceptual limitations.
+          Many reported UAPs can be attributed to conventional aircraft, satellites, drones, or weather phenomena.
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

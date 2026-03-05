@@ -17,7 +17,6 @@ export default function Page() {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-        console.log(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -32,21 +31,29 @@ export default function Page() {
 
   return (
     <>
-      <div className="py-10">
+      <div className="py-10 px-4">
         <div className="grid place-items-center">
-          <h1 className="text-5xl text-center text-white font-tektur">All Sightings</h1>
-          <div className="bg-secondary w-64 h-1 my-2 rounded-md"></div>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="status-online"></span>
+            <span className="text-xs font-sharetech text-cyber-cyan uppercase tracking-[0.3em]">Database Connected</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl text-center text-cyber-yellow font-orbitron font-bold text-glow-yellow">
+            ALL SIGHTINGS
+          </h1>
+          <div className="cyber-divider w-64 my-4"></div>
         </div>
-        <h2 className='text-base text-center text-white font-tektur relative'> Add Sightings are added here. Search & scroll for more details.</h2>
+        <p className="text-sm text-center text-gray-500 font-sharetech uppercase tracking-widest mb-6">
+          Search &amp; scroll for detailed incident reports
+        </p>
 
         {loading ? (
-          <div className='flex flex-col h-full space-y-2 p-8'>
+          <div className="flex flex-col h-full space-y-2 p-8">
             {['h-9 md:w-1/3', 'h-10', 'h-12', 'h-12', 'h-12', 'h-12', 'h-12', 'h-12', 'h-12'].map((classes, index) => (
-              <Skeleton key={index} className={classes} />
+              <Skeleton key={index} className={`${classes} bg-cyber-gray`} />
             ))}
           </div>
         ) : (
-          <div className='p-8'>
+          <div className="p-8">
             <DataTable
               columns={dataTableColumns}
               data={data}
@@ -55,19 +62,12 @@ export default function Page() {
           </div>
         )}
 
-      </div><div className="mt-8 text-sm text-gray-500">
-        <hr className="my-4" />
-        <p id="footnote-1">
-          <sup>1</sup> SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for exploring these intriguing phenomena, it's important to remember that SkyWatch does not, and cannot, definitively prove or disprove the existence of extraterrestrial life.
-          <br /><br />
-          The database captures subjective eyewitness accounts, which can be influenced by a variety of factors: misidentification of known objects, atmospheric conditions, limitations of human perception, and even hoaxes. Many reported UAPs can likely be attributed to more mundane explanations, such as:
-          <br />
-          <ul>
-            <li>Commercial or military aircraft: Unfamiliar aircraft or unusual flight paths can easily be misconstrued.</li>
-            <li>Satellites and space debris: Reflecting sunlight can create unexpected visual effects, especially at night.</li>
-            <li>Drones: The increasing prevalence of drones, both commercial and private, adds to the complexity of airspace.</li>
-            <li>Weather phenomena: Unusual cloud formations, atmospheric distortions, or even meteorological balloons can create perplexing sightings.</li>
-          </ul>
+      </div>
+      <div className="mx-4 md:mx-8 mt-8">
+        <div className="cyber-divider mb-4"></div>
+        <p className="text-xs text-gray-600 font-sharetech leading-relaxed" id="footnote-1">
+          <span className="text-cyber-yellow/50 uppercase tracking-widest">// NOTICE:</span> SkyWatch compiles reported UAP sightings.
+          Eyewitness accounts may be influenced by misidentification, atmospheric conditions, or perceptual limitations.
         </p>
       </div>
     </>

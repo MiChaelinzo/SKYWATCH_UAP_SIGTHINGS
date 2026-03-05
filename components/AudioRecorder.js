@@ -1,4 +1,4 @@
-// app/AIBackground/components/AudioRecorder.js
+// components/AudioRecorder.js
 "use client"
 
 import { useState, useRef } from 'react';
@@ -42,11 +42,11 @@ function AudioRecorder() {
 
     return (
         <div>
-            <h3 className="text-lg font-semibold mb-2">Audio Message</h3>
+            <h3 className="text-sm font-sharetech text-cyber-yellow uppercase tracking-widest mb-3">▸ Audio Message</h3>
             <div className="flex items-center space-x-4">
                 {!isRecording ? (
                     <button
-                        className="bg-green-500 hover:bg-green-600 text-white rounded-md py-2 px-4 focus:outline-none"
+                        className="cyber-btn text-sm py-1 px-4"
                         onClick={startRecording}
                         disabled={isRecording}
                     >
@@ -54,18 +54,18 @@ function AudioRecorder() {
                     </button>
                 ) : (
                     <button
-                        className="bg-red-500 hover:bg-red-600 text-white rounded-md py-2 px-4 focus:outline-none"
+                        className="relative px-4 py-1 font-rajdhani font-bold uppercase tracking-wider text-white bg-cyber-pink border border-cyber-pink hover:bg-cyber-pink/80 transition-all text-sm"
                         onClick={stopRecording}
                         disabled={!isRecording}
                     >
-                        Stop Recording
+                        ● Stop Recording
                     </button>
                 )}
                 {audioURL && (
                     <audio src={audioURL} controls className="block" />
                 )}
             </div>
-            <p className="text-sm text-gray-400 mt-1">Record and play audio messages.</p>
+            <p className="text-xs text-gray-600 mt-2 font-sharetech">Record and play audio messages.</p>
         </div>
     );
 }

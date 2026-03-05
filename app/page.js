@@ -1,88 +1,168 @@
 // app/page.js
 "use client"
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Corrected import paths for app/page.js - START WITH `./AIBackground/...` - VERY IMPORTANT
-import AudioRecorder from './components/AudioRecorder';
-import ScreenShare from './components/ScreenShare';
-import LiveVideo from './components/LiveVideo';
-import ChatComponent from './components/ChatComponent'; // Keep if you are still using it
+export default function Page() {
+  const [threatLevel, setThreatLevel] = useState('MODERATE');
+  const [sightingCount, setSightingCount] = useState(0);
 
+  useEffect(() => {
+    // Animate sighting counter
+    const target = 500000;
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      setSightingCount(Math.floor(current));
+    }, 16);
+    return () => clearInterval(timer);
+  }, []);
 
-export default function page() {
+  const stats = [
+    { label: 'TOTAL REPORTS', value: sightingCount.toLocaleString() + '+', color: 'text-cyber-yellow' },
+    { label: 'ACTIVE ZONES', value: '2,847', color: 'text-cyber-cyan' },
+    { label: 'AI MODELS', value: '8', color: 'text-cyber-pink' },
+    { label: 'THREAT LEVEL', value: threatLevel, color: 'threat-moderate' },
+  ];
+
   return (
-    <div className="md:mx-28 mx-4 text-white pt-10 pb-12">
-      <div className="md:grid md:grid-cols-2 items-center pt-10">
+    <div className="md:mx-28 mx-4 text-gray-200 pt-10 pb-12">
+      {/* Hero Section */}
+      <div className="md:grid md:grid-cols-2 items-center pt-10 gap-8">
         <div>
-          <h1 className="text-3xl md:text-6xl font-tektur">Who we are</h1>
-          <p className="text-xl text-justify py-4 tracking-wider">
-            SkyWatch is the world's most comprehensive platform for exploring and reporting Unidentified Aerial Phenomena (UAP) sightings. 
-            Combining a massive database of over 500,000 reports with cutting-edge AI image generation and powerful semantic search capabilities, 
+          <div className="flex items-center gap-2 mb-2">
+            <span className="status-online"></span>
+            <span className="text-sm font-sharetech text-cyber-cyan uppercase tracking-widest">System Online</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-orbitron font-bold text-cyber-yellow text-glow-yellow leading-tight">
+            SKYWATCH
+          </h1>
+          <h2 className="text-xl md:text-2xl font-rajdhani text-cyber-cyan text-glow-cyan mt-1 uppercase tracking-wider">
+            UAP Surveillance Network
+          </h2>
+          <p className="text-lg text-gray-400 text-justify py-4 tracking-wider font-rajdhani leading-relaxed">
+            SkyWatch is the world&apos;s most comprehensive platform for exploring and reporting Unidentified Aerial Phenomena (UAP) sightings.
+            Combining a massive database of over 500,000 reports with cutting-edge AI image generation and powerful semantic search capabilities,
             SkyWatch lets users dive deep into the mystery of UAPs, uncover hidden patterns, and contribute their own data to the ongoing search for answers.
           </p>
 
-          <Link href="/AllSighting">
-            <button className="bg-secondary py-2 px-8 rounded-md text-xl md:text-2xl">All Sighting</button>
-          </Link>
+          <div className="flex gap-4 flex-wrap">
+            <Link href="/AllSighting">
+              <button className="cyber-btn text-lg">
+                Access Database
+              </button>
+            </Link>
+            <Link href="/Chat">
+              <button className="relative px-6 py-2 font-rajdhani font-bold uppercase tracking-wider text-cyber-cyan border border-cyber-cyan hover:bg-cyber-cyan/10 transition-all duration-200 text-lg">
+                AI Sentinel
+              </button>
+            </Link>
+          </div>
         </div>
-        <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black">
-          <Image src="/hero1.jpg" alt="img" width="500" height="300" />
+        <div className="grid place-items-center py-4 relative">
+          <div className="border-glow-cyan p-1">
+            <Image src="/hero1.jpg" alt="UAP Sighting" width="500" height="300" className="opacity-90" />
+          </div>
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-cyber-darker/80 border border-cyber-cyan/30 px-4 py-1">
+            <span className="font-sharetech text-cyber-cyan text-xs uppercase tracking-widest">Classified Visual Data</span>
+          </div>
         </div>
       </div>
 
-      <div className="md:grid md:grid-cols-2 pt-12 items-center">
-        <div className="grid place-items-center py-4 drop-shadow-3xl shadow-black">
-          <Image src="/hero2.jpg" alt="img" width="500" height="300" />
+      {/* Stats Dashboard */}
+      <div className="my-16">
+        <div className="cyber-divider mb-8"></div>
+        <div className="flex items-center gap-2 mb-6">
+          <span className="w-3 h-3 bg-cyber-yellow animate-neon-pulse"></span>
+          <h3 className="text-sm font-sharetech text-cyber-yellow uppercase tracking-[0.3em]">Live Intelligence Dashboard</h3>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat, i) => (
+            <div key={i} className="cyber-card p-6 text-center">
+              <div className={`text-2xl md:text-3xl font-orbitron font-bold ${stat.color}`}>
+                {stat.value}
+              </div>
+              <div className="text-xs font-sharetech text-gray-500 mt-2 uppercase tracking-widest">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="md:grid md:grid-cols-2 pt-12 items-center gap-8">
+        <div className="grid place-items-center py-4 relative">
+          <div className="border-glow-pink p-1">
+            <Image src="/hero2.jpg" alt="UAP Analysis" width="500" height="300" className="opacity-90" />
+          </div>
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-cyber-darker/80 border border-cyber-pink/30 px-4 py-1">
+            <span className="font-sharetech text-cyber-pink text-xs uppercase tracking-widest">Analysis Module</span>
+          </div>
         </div>
         <div>
-          <h1 className="text-3xl md:text-5xl font-tektur">What else do we have</h1>
-          <p className="text-xl md:text-2xl py-4 tracking-wider">
-            SkyWatch UAP Sightings is a web-application where you can:
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-cyber-cyan text-glow-cyan">
+            CAPABILITIES
+          </h2>
+          <p className="text-xl md:text-2xl py-4 tracking-wider text-gray-400 font-rajdhani">
+            SkyWatch UAP Sightings platform features:
           </p>
-          <ul className="text-xl">
-            <li className="list-disc">
-              Effortless Cloud Database:{' '}
-              <a href="https://tidbcloud.com/" target="_blank" rel="noopener noreferrer">"TIDB Cloud Serverless"</a>{' '}
-              takes care of everything, so you can focus on exploring UAP data, not managing servers. It's like having a team of database experts on call 24/7!
+          <ul className="text-lg space-y-4 font-rajdhani">
+            <li className="flex items-start gap-3">
+              <span className="text-cyber-yellow mt-1">▸</span>
+              <span>
+                <strong className="text-cyber-yellow">Cloud Database:</strong>{' '}
+                <a href="https://tidbcloud.com/" target="_blank" rel="noopener noreferrer" className="text-cyber-cyan hover:text-glow-cyan transition-all">&quot;TIDB Cloud Serverless&quot;</a>{' '}
+                handles infrastructure so you can focus on exploring UAP data.
+              </span>
             </li>
-            <li className="list-disc">
-SKYWATCH Sentinel's powerful AI, leveraging NVIDIA's advanced language models via the https://integrate.api.nvidia.com/v1 endpoint, provides real-time analysis based on historical data and machine learning algorithms.   
-              speed.
+            <li className="flex items-start gap-3">
+              <span className="text-cyber-pink mt-1">▸</span>
+              <span>
+                <strong className="text-cyber-pink">NVIDIA AI Sentinel:</strong>{' '}
+                Leveraging NVIDIA&apos;s advanced language models for real-time analysis based on historical data and machine learning algorithms.
+              </span>
             </li>
-            <li className="list-disc">
-              Easy Switch from MySQL: Already using MySQL? Migrating to{' '}
-              <a href="https://tidbcloud.com/" target="_blank" rel="noopener noreferrer">"TIDB Cloud Serverless"</a>{' '}
-              is a breeze, letting you unlock powerful new features without rewriting your whole application.
+            <li className="flex items-start gap-3">
+              <span className="text-cyber-cyan mt-1">▸</span>
+              <span>
+                <strong className="text-cyber-cyan">Easy MySQL Migration:</strong>{' '}
+                Seamlessly migrate to{' '}
+                <a href="https://tidbcloud.com/" target="_blank" rel="noopener noreferrer" className="text-cyber-yellow hover:text-glow-yellow transition-all">&quot;TIDB Cloud Serverless&quot;</a>{' '}
+                to unlock powerful new features without rewriting your application.
+              </span>
             </li>
-            <li className="list-disc">
-              Find Answers Fast:{' '}
-              <a href="https://tidbcloud.com/" target="_blank" rel="noopener noreferrer">"TIDB Cloud Serverless"</a>{' '}
-              lightning-fast queries make exploring our massive UAP database incredibly responsive. No more waiting around for results – dig into the data and uncover the truth!
+            <li className="flex items-start gap-3">
+              <span className="text-cyber-yellow mt-1">▸</span>
+              <span>
+                <strong className="text-cyber-yellow">Lightning Queries:</strong>{' '}
+                Incredibly responsive search across our massive UAP database. No more waiting for results.
+              </span>
             </li>
           </ul>
         </div>
       </div>
 
       {/* Footnote Section */}
-      <div className="mt-8 text-sm text-gray-500">
-        <hr className="my-4" />
-        <div id="footnote-1">
-          <sup>1</sup> SkyWatch is a fascinating project that compiles and visualizes a vast amount of data on reported UAP sightings. While it provides a valuable tool for exploring these intriguing phenomena, it's important to remember that SkyWatch does not, and cannot, definitively prove or disprove the existence of extraterrestrial life. 
-          <br /><br />
-          The database captures subjective eyewitness accounts, which can be influenced by a variety of factors: misidentification of known objects, atmospheric conditions, limitations of human perception, and even hoaxes. Many reported UAPs can likely be attributed to more mundane explanations, such as:
-          <br />
-          <ul>
-            <li>Commercial or military aircraft: Unfamiliar aircraft or unusual flight paths can easily be misconstrued.</li>
-            <li>Satellites and space debris: Reflecting sunlight can create unexpected visual effects, especially at night.</li>
-            <li>Drones: The increasing prevalence of drones, both commercial and private, adds to the complexity of airspace.</li>
-            <li>Weather phenomena: Unusual cloud formations, atmospheric distortions, or even meteorological balloons can create perplexing sightings.</li>
-          </ul>
-        </div> 
+      <div className="mt-16">
+        <div className="cyber-divider mb-6"></div>
+        <div className="text-sm text-gray-600 font-sharetech" id="footnote-1">
+          <span className="text-cyber-yellow/50 text-xs uppercase tracking-widest">// DISCLAIMER</span>
+          <p className="mt-2 leading-relaxed">
+            SkyWatch compiles and visualizes data on reported UAP sightings. It does not definitively prove or disprove the existence of extraterrestrial life.
+            The database captures subjective eyewitness accounts, which can be influenced by misidentification of known objects, atmospheric conditions,
+            limitations of human perception, and other factors. Many reported UAPs can likely be attributed to commercial/military aircraft, satellites, drones, or weather phenomena.
+          </p>
+        </div>
       </div>
     </div>
-
   );
 }

@@ -4,11 +4,9 @@ import { useState } from 'react'
 import axios from 'axios'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
-// Corrected import paths - all components in the SAME 'components' directory
 import AudioRecorder from './AudioRecorder';
 import ScreenShare from './ScreenShare';
 import LiveVideo from './LiveVideo';
-import ChatComponent from './ChatComponent'; // Keep if you are using it
 
 export default function Chat() {
     const [input, setInput] = useState('');
@@ -32,15 +30,13 @@ export default function Chat() {
         setLoading(true);
 
         try {
-            // Make a POST request to /api/chat
             const response = await axios.post('/api/chat', {
-                message: input, // Sending user input as 'message'
-                senderId: 'user-chat-page', // Example sender ID, adjust as needed
-                roomId: 'ai-chat-room',    // Example room ID, adjust as needed
-                model: selectedModel      // Still sending model
+                message: input,
+                senderId: 'user-chat-page',
+                roomId: 'ai-chat-room',
+                model: selectedModel
             });
 
-            // Display the API response
             setMessages([...messages, { user: input, ai: response.data.message }]);
             setInput('');
         } catch (error) {
@@ -52,39 +48,54 @@ export default function Chat() {
     };
 
     return (
-        <div className='flex flex-col p-4'>
+        <div className="flex flex-col p-4">
             {/* AI Chat Section */}
-            <div className='mb-8'>
-                <div className='overflow-y-auto h-96 border border-gray-300 p-2 mb-4 rounded'>
+            <div className="mb-8">
+                <div className="overflow-y-auto h-96 border border-cyber-yellow/30 p-4 mb-4 bg-cyber-darker/50 font-sharetech text-sm">
+                    {messages.length === 0 && (
+                        <div className="text-gray-600 text-center py-8 uppercase tracking-widest text-xs">
+                            // Awaiting transmission...
+                        </div>
+                    )}
                     {messages.map((msg, index) => (
-                        <div key={index} className='my-4'>
-                            <strong className='text-white'>User:</strong> <span className='text-white'>{msg.user}</span><br />
-                            <strong className='text-white'>SkyWatch AI:</strong> <span className='text-white'>{msg.ai}</span>
+                        <div key={index} className="my-4">
+                            <div className="mb-2">
+                                <span className="text-cyber-cyan text-xs uppercase tracking-widest">User &gt;</span>
+                                <span className="text-gray-300 ml-2">{msg.user}</span>
+                            </div>
+                            <div>
+                                <span className="text-cyber-yellow text-xs uppercase tracking-widest">Sentinel &gt;</span>
+                                <span className="text-gray-300 ml-2">{msg.ai}</span>
+                            </div>
+                            <div className="cyber-divider mt-3 opacity-30"></div>
                         </div>
                     ))}
                     {loading && (
-                        <div className='my-4 text-gray-500'>Processing...</div>
+                        <div className="my-4 text-cyber-yellow animate-neon-pulse font-sharetech text-xs uppercase tracking-widest">
+                            Processing neural response...
+                        </div>
                     )}
                 </div>
 
                 <input
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder='Ask about UAPs...'
-                    className='border border-gray-300 p-2 mb-2 rounded'
+                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                    placeholder="Enter query..."
+                    className="cyber-input w-full mb-3"
                     disabled={loading}
                 />
 
-                <div className='mt-1 mb-2'>
-                    <h1 className='text-gray-200'>Select Model</h1>
+                <div className="mt-1 mb-3">
+                    <label className="text-xs font-sharetech text-cyber-cyan uppercase tracking-[0.2em] mb-1 block">Select Model</label>
                     <Select defaultValue={selectedModel} onValueChange={setSelectedModel}>
-                        <SelectTrigger>
-                            <SelectValue placeholder='Select Model' />
+                        <SelectTrigger className="border-cyber-yellow/30 bg-cyber-darker text-cyber-yellow font-sharetech">
+                            <SelectValue placeholder="Select Model" />
                         </SelectTrigger>
-                        <SelectContent>
-                            <SelectGroup label='Models'>
+                        <SelectContent className="bg-cyber-darker border-cyber-yellow/30">
+                            <SelectGroup label="Models">
                                 {Models.map((model, index) => (
-                                    <SelectItem key={index} value={model}>
+                                    <SelectItem key={index} value={model} className="text-gray-300 font-sharetech hover:text-cyber-yellow">
                                         {model}
                                     </SelectItem>
                                 ))}
@@ -95,31 +106,31 @@ export default function Chat() {
 
                 <button
                     onClick={handleSend}
-                    className={`bg-blue-500 text-white p-2 rounded ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    className={`cyber-btn ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                     disabled={loading}
                 >
-                    Send
+                    Transmit
                 </button>
             </div>
 
             {/* Multimodal Features Section */}
-            <div className="my-8 p-4 border border-gray-300 rounded-md bg-gray-800 text-white">
-                <h2 className="text-2xl font-semibold mb-4">Multimodal Tools</h2>
+            <div className="my-8 p-4 border border-cyber-yellow/20 bg-cyber-gray text-gray-200">
+                <h2 className="text-xl font-orbitron font-semibold mb-4 text-cyber-cyan uppercase tracking-wider">
+                    <span className="text-cyber-yellow mr-2">▸</span>Multimodal Tools
+                </h2>
 
-                {/* --- Audio Recorder Component --- */}
-                <AudioRecorder />
-
-                {/* --- Screen Share Component --- */}
-                <ScreenShare />
-
-                {/* --- Live Video Component --- */}
-                <LiveVideo />
-
-                {/* --- Optional: Chat Component (if you want a separate chat UI here as well) --- */}
-                {/* <ChatComponent /> */}
+                <div className="space-y-4">
+                    <div className="p-3 border border-cyber-yellow/10 bg-cyber-darker/50">
+                        <AudioRecorder />
+                    </div>
+                    <div className="p-3 border border-cyber-cyan/10 bg-cyber-darker/50">
+                        <ScreenShare />
+                    </div>
+                    <div className="p-3 border border-cyber-pink/10 bg-cyber-darker/50">
+                        <LiveVideo />
+                    </div>
+                </div>
             </div>
         </div>
     );
 }
-
-export default Chat;
