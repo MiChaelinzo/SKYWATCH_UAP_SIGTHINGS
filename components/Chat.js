@@ -64,7 +64,7 @@ export default function Chat() {
                                 <span className="text-gray-300 ml-2">{msg.user}</span>
                             </div>
                             <div>
-                                <span className="text-cyber-yellow text-xs uppercase tracking-widest">Sentinel &gt;</span>
+                                <span className="text-cyber-yellow text-xs uppercase tracking-widest">SkyWatch AI &gt;</span>
                                 <span className="text-gray-300 ml-2">{msg.ai}</span>
                             </div>
                             <div className="cyber-divider mt-3 opacity-30"></div>

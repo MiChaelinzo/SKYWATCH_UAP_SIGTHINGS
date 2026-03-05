@@ -5,13 +5,15 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const TOTAL_REPORTS_COUNT = 500000;
+
 export default function Page() {
   const [threatLevel, setThreatLevel] = useState('MODERATE');
   const [sightingCount, setSightingCount] = useState(0);
 
   useEffect(() => {
     // Animate sighting counter
-    const target = 500000;
+    const target = TOTAL_REPORTS_COUNT;
     const duration = 2000;
     const step = target / (duration / 16);
     let current = 0;

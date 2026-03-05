@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const AddData = () => {
   const [formData, setFormData] = useState({
@@ -56,7 +56,10 @@ const AddData = () => {
   };
 
   const currentDate = new Date().toISOString().slice(0, 10);
-  formData.posted = currentDate;
+
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, posted: currentDate }));
+  }, [currentDate]);
 
   const fields = [
     { label: 'Date of Sighting', name: 'event_date_time', type: 'date' },
