@@ -1,18 +1,15 @@
 import './globals.css'
-import { Montserrat  } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 
-const inter = Montserrat({ subsets: ['latin'] })
-
 export const metadata = {
-  title: 'SKYWATCH UAP Sightings',
-  description: 'UFO 🛸🛸',
+  title: 'SKYWATCH // UAP SURVEILLANCE NETWORK',
+  description: 'Cyberpunk UAP Sighting Surveillance & Intelligence Platform 🛸',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={inter.className}>
+      <body style={{ fontFamily: 'Rajdhani, system-ui, Arial, sans-serif' }}>
         <Navbar />
         {children}
       </body>

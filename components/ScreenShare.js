@@ -1,4 +1,4 @@
-// app/AIBackground/components/ScreenShare.js
+// components/ScreenShare.js
 "use client"
 
 import { useState, useRef } from 'react';
@@ -36,30 +36,30 @@ function ScreenShare() {
 
     return (
         <div>
-            <h3 className="text-lg font-semibold mb-2">Screen Sharing</h3>
+            <h3 className="text-sm font-sharetech text-cyber-cyan uppercase tracking-widest mb-3">▸ Screen Sharing</h3>
             <div className="mb-2">
                 {!isScreenSharing ? (
                     <button
-                        className="bg-purple-500 hover:bg-purple-600 text-white rounded-md py-2 px-4 focus:outline-none"
+                        className="cyber-btn text-sm py-1 px-4"
                         onClick={startScreenShare}
                         disabled={isScreenSharing}
                     >
-                        Start Screen Sharing
+                        Start Screen Share
                     </button>
                 ) : (
                     <button
-                        className="bg-yellow-500 hover:bg-yellow-600 text-black rounded-md py-2 px-4 focus:outline-none"
+                        className="relative px-4 py-1 font-rajdhani font-bold uppercase tracking-wider text-cyber-dark bg-cyber-yellow border border-cyber-yellow hover:bg-cyber-yellow/80 transition-all text-sm"
                         onClick={stopScreenShare}
                         disabled={!isScreenSharing}
                     >
-                        Stop Screen Sharing
+                        Stop Screen Share
                     </button>
                 )}
             </div>
             {isScreenSharing && (
-                <video ref={screenShareVideoRef} autoPlay muted className="rounded-md shadow-lg" style={{ maxWidth: '320px' }} />
+                <video ref={screenShareVideoRef} autoPlay muted className="border border-cyber-cyan/30" style={{ maxWidth: '320px' }} />
             )}
-            <p className="text-sm text-gray-400 mt-1">Share your screen. For remote sharing, you'd need WebRTC and signaling.</p>
+            <p className="text-xs text-gray-600 mt-2 font-sharetech">Share your screen. For remote sharing, integrate WebRTC signaling.</p>
         </div>
     );
 }
